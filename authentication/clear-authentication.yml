@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/clear-verification-openapi.json
+docs: https://docs.clearme.com/reference/api-keys
+summary:
+  types:
+  - http
+  - oauth2
+  - openIdConnect
+  http_schemes:
+  - bearer
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: Authorization_Bearer
+  type: http
+  scheme: bearer
+  description: 'API key passed as a Bearer token: Authorization: Bearer <API_KEY>. Separate sandbox and production keys. HTTPS required.'
+  sources:
+  - openapi/clear-verification-openapi.json
+- name: OAuth2_OIDC
+  type: oauth2
+  scheme: authorizationCode
+  description: OAuth 2.0 / OpenID Connect for end-user identity tokens, with PKCE (S256). Issuer https://verified.clearme.com/integrations.
+  authorizationUrl: https://verified.clearme.com/integrations/oauth2/auth
+  tokenUrl: https://verified.clearme.com/integrations/oauth2/token
+  scopes:
+  - openid
+  - offline
+  - offline_access
+  sources:
+  - https://docs.clearme.com/docs/oidc-identity-token
+  - well-known/clear-openid-configuration.json
