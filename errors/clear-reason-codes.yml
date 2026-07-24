@@ -1,0 +1,104 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.clearme.com/docs/identity-check-reason-codes
+note: CLEAR1 identity-check exit codes (the identity-verification analog of decline codes). Only the Source Validation (SV) family is published in the reason-code reference. Codes surface on the verification
+  session `checks[]` results and support tooling.
+family: Source Validation (SV)
+outcomes:
+- pass
+- not_applicable
+- indeterminate
+- fail
+reason_codes:
+- code: SV201
+  outcome: pass
+  meaning: Passport authenticity was validated using embedded security features and issuing records.
+- code: SV202
+  outcome: pass
+  meaning: The user’s phone number was corroborated using the information on the submitted government ID.
+- code: SV203
+  outcome: pass
+  meaning: The user’s information was verified against trusted reference data.
+- code: SV204
+  outcome: pass
+  meaning: The driver’s license or state ID information was validated against an authoritative state motor vehicle record.
+- code: SV205
+  outcome: pass
+  meaning: The national ID number was validated against an authoritative source.
+- code: SV301
+  outcome: not_applicable
+  meaning: Source validation is not supported for {Country_Name}.If {country name} is not available:- “Source validation is not supported for the provided country.”- “Source validation is not supported
+    based on the user’s information”.
+- code: SV302
+  outcome: not_applicable
+  meaning: Motor vehicle records lookup is not supported for {state, or country if outside of the USA}.If it is not possible to determine the document issuer, such as country or state:- Motor vehicle records
+    lookup is not supported for this document issuer.
+- code: SV303
+  outcome: not_applicable
+  meaning: The provided document is not a driver’s license or state ID.
+- code: SV501
+  outcome: indeterminate
+  meaning: Source validation is temporarily unavailable and cannot be completed.
+- code: SV502
+  outcome: indeterminate
+  meaning: The user declined to complete all necessary steps for the verification.
+- code: SV401
+  outcome: fail
+  meaning: The provided details could not be verified using authoritative reference data.
+- code: SV402
+  outcome: fail
+  meaning: The person associated with this phone number was found to be deceased.
+- code: SV403
+  outcome: fail
+  meaning: Verification could not be completed using trusted carrier data; only non-carrier data was available.
+- code: SV404
+  outcome: fail
+  meaning: The provided name does not match the name associated with this phone number.
+- code: SV405
+  outcome: fail
+  meaning: The provided date of birth does not match the name associated with this phone number.
+- code: SV406
+  outcome: fail
+  meaning: The provided information matches a different identity in trusted reference data.
+- code: SV407
+  outcome: fail
+  meaning: The provided phone number could not be verified using trusted reference data.
+- code: SV408
+  outcome: fail
+  meaning: The provided address could not be verified using trusted reference data.
+- code: SV409
+  outcome: fail
+  meaning: The name data for this phone number could not be found.
+- code: SV410
+  outcome: fail
+  meaning: Phone carrier data is unavailable for this recently established phone account.
+- code: SV411
+  outcome: fail
+  meaning: The provided phone number cannot be verified as a mobile or fixed number.
+- code: SV412
+  outcome: fail
+  meaning: No matching name records exist in trusted reference data.
+- code: SV413
+  outcome: fail
+  meaning: The provided identity could not be verified with trusted data.
+- code: SV414
+  outcome: fail
+  meaning: This ID number was not found in state motor vehicle records.
+- code: SV415
+  outcome: fail
+  meaning: For this ID number, the first name on the document does not match state motor vehicle records.
+- code: SV416
+  outcome: fail
+  meaning: For this ID number, the last name on the document does not match state motor vehicle records.
+- code: SV417
+  outcome: fail
+  meaning: For this ID number, the date of birth on the document does not match state motor vehicle records.
+- code: SV418
+  outcome: fail
+  meaning: For this ID number, multiple pieces of information on the document do not match state motor vehicle records.
+- code: SV419
+  outcome: fail
+  meaning: The provided full name could not be verified using trusted reference data.
+- code: SV420
+  outcome: fail
+  meaning: The provided date of birth could not be verified using trusted reference data.

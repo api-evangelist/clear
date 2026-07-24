@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.clearme.com/docs/web-app + https://docs.clearme.com/docs/standard-integration + https://docs.clearme.com/docs/security-guidelines
+note: CLEAR ships a hosted, prebuilt verification experience plus a Web SDK; there is no public npm package (first-party SDK is distributed by CLEAR, not a public registry).
+components:
+- family: Hosted Verification UI
+  type: hosted
+  loader: https://verified.clearme.com/verify?token=<verification_token>
+  description: CLEAR-hosted identity verification flow launched by session token; embeddable via redirect, webview (iOS ASWebAuthenticationSession / Android Custom Tab), or kiosk browser.
+- family: Web SDK
+  type: javascript
+  description: CLEAR Web SDK that wraps the verification experience in an existing web app; must be used unaltered per CLEAR security guidelines.
+- family: Console
+  type: hosted-dashboard
+  loader: https://verified.clearme.com/dashboard
+  description: Admin console for projects, API keys, OIDC clients, webhook configuration, and the verification table.

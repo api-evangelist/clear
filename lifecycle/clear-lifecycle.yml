@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.clearme.com/reference + https://status.clearme.com
+versioning:
+  scheme: uri-path
+  current: v1
+  api_version: '1.1'
+  base_url: https://verified.clearme.com/v1
+deprecation:
+  policy: Individual endpoints/fields carry inline deprecation notices in the API reference.
+  deprecated_operations:
+  - openapi/clear-verification-openapi.json#list_verifications
+  deprecated_fields:
+  - verified_info (use traits)
+  - reveal via https://secure.verified.clearme.com host (use reveal_sensitive_data query param)
+status_page: https://status.clearme.com
+sandbox:
+  separation: Sandbox vs production API keys; sandbox verification sessions run no live checks.

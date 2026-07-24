@@ -1,0 +1,42 @@
+arazzo: 1.0.1
+info:
+  title: CLEAR verify an identity
+  version: 1.0.0
+  description: Create a CLEAR verification session, then retrieve its result and verified traits.
+sourceDescriptions:
+- name: clear
+  url: ../openapi/clear-verification-openapi.json
+  type: openapi
+workflows:
+- workflowId: verifyIdentity
+  summary: Create a verification session and retrieve the verified result
+  inputs:
+    type: object
+    properties:
+      project_id:
+        type: string
+      redirect_url:
+        type: string
+  steps:
+  - stepId: createSession
+    operationId: create_verification_session
+    requestBody:
+      contentType: application/json
+      payload:
+        project_id: $inputs.project_id
+        redirect_url: $inputs.redirect_url
+        sandbox: true
+    outputs:
+      sessionId: $response.body#/id
+      token: $response.body#/token
+  - stepId: getSession
+    operationId: get_verification
+    parameters:
+    - name: id
+      in: path
+      value: $steps.createSession.outputs.sessionId
+    outputs:
+      status: $response.body#/status
+      traits: $response.body#/traits
+  outputs:
+    status: $steps.getSession.outputs.status

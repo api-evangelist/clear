@@ -1,0 +1,51 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/clear-verification-openapi.json
+entities:
+- name: VerificationSession
+  id_prefix: verify_
+  description: Core object representing an identity verification; carries status, checks[], and verified traits
+  key_fields:
+  - id
+  - object_name
+  - status
+  - idv_status
+  - authentication_methods
+  - checks
+  - traits
+  - project_id
+  - user_id
+  - token
+  - custom_fields
+- name: Project
+  id_prefix: project_
+  description: Console project that configures a verification flow (referenced by project_id)
+- name: User
+  id_prefix: null
+  description: Persistent verified user identified by user_id (psuid) for returning-user matching
+- name: Traits
+  description: Verified attributes bundle including nested document, address, and health_insurance objects
+- name: Event
+  id_prefix: event_
+  description: Webhook event notifying of verification session lifecycle changes
+relationships:
+- from: VerificationSession
+  to: Project
+  type: belongs_to
+  via: project_id
+- from: VerificationSession
+  to: User
+  type: belongs_to
+  via: user_id
+- from: VerificationSession
+  to: Traits
+  type: has_one
+  via: traits
+- from: Traits
+  to: Document
+  type: has_one
+  via: document
+- from: Event
+  to: VerificationSession
+  type: references
+  via: data.verification_session_id

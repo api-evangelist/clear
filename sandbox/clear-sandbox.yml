@@ -1,0 +1,67 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.clearme.com/reference/api-keys + https://docs.clearme.com/docs/sandbox-testing + https://docs.clearme.com/docs/synthetic-test-patients
+modes:
+  separation: Environment-specific API keys (sandbox vs production). Sandbox keys generated in the Console; production keys issued by CLEAR support.
+  request_flag: sandbox (boolean) on VerificationOptions when creating a session
+  behavior: Sandbox sessions send no OTPs and run no live checks against real data sources.
+magic_values:
+  otp_code: 123456 (accepted for any email/phone OTP in sandbox)
+  otp_failure: Enter 5 incorrect OTP codes to simulate an authentication failure
+  repeat_verification_phone: 408-222-2222 (simulates a returning/streamlined CLEAR user)
+  default_identity: Sandbox returns a fake "John Doe" identity by default
+  document_failure: Check "Fail this attempt" on the document capture page to simulate a document authenticity failure
+  reject_verification: Check "Reject verification" to reject the user’s identity in sandbox
+synthetic_identities:
+- name: Allison Hackett
+  phone: 608-555-1243
+  email: ahackett@gmail.com
+  dob: '1987-01-15'
+  records: Epic, MedAllies
+- name: Damon Mychart
+  phone: 608-211-3314
+  email: dmychart@gmail.com
+  dob: '1979-07-26'
+  records: Epic, MedAllies
+- name: Dog Beaker
+  phone: 410-707-2690
+  email: dogbeaker@aol.com
+  dob: '1985-11-24'
+  records: MedAllies
+- name: Barbara Testa
+  phone: 831-600-3769
+  email: btesta@hotmail.com
+  dob: '1947-05-24'
+  records: MedAllies
+- name: Tracy CraneTest
+  phone: 222-360-1564
+  email: tcranetest@gmail.com
+  dob: '1936-12-26'
+  records: Commonwell
+- name: Camila Maria Lopez
+  phone: 469-469-4321
+  email: knixontestemail@epic.com
+  dob: '1987-09-12'
+  records: Epic, Commonwell, MedAllies
+- name: Derrick Lin
+  phone: 785-785-4321
+  email: knixontestemail2@epic.com
+  dob: '1973-06-03'
+  records: Epic, Commonwell, MedAllies
+- name: Homer J Simpson
+  phone: 217-123-3608
+  email: hsimpson@gmail.com
+  dob: '1975-02-09'
+  records: Commonwell
+- name: Margaret Smith
+  phone: 706-123-4567
+  email: msmith60@gmail.com
+  dob: '1960-01-02'
+  records: Kno2
+- name: Ellen Doe
+  phone: 401-555-1940
+  email: ellen.doe4321@gmail.com
+  dob: '1940-03-07'
+  records: CMS
+  ssn: '900090009'
+note: Synthetic identities always return a successful verification; use a different phone number to simulate failures. Values published verbatim in CLEAR docs for sandbox use only.

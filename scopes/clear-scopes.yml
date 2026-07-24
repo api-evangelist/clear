@@ -1,0 +1,37 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/clear-verification-openapi.json
+docs: https://docs.clearme.com/docs/oidc-identity-token
+discovery: well-known/clear-openid-configuration.json
+schemes:
+- name: OIDC
+  source: https://verified.clearme.com/integrations/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://verified.clearme.com/integrations/oauth2/auth
+    tokenUrl: https://verified.clearme.com/integrations/oauth2/token
+    pkce: S256
+  grant_types:
+  - authorization_code
+  - implicit
+  - client_credentials
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:device_code
+  token_endpoint_auth:
+  - client_secret_post
+  - client_secret_basic
+  - private_key_jwt
+  - none
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; returns an identity token with verified member claims
+  flows:
+  - authorizationCode
+- scope: offline
+  description: Grants offline access (long-lived) to the verification session
+  flows:
+  - authorizationCode
+- scope: offline_access
+  description: Issues a refresh token for renewing access without user re-interaction
+  flows:
+  - authorizationCode

@@ -1,0 +1,27 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/clear-verification-openapi.json
+note: Candidate tool list derived from CLEAR1 Verification Sessions API operations. No official hosted CLEAR MCP server was found as of this run.
+server:
+  name: clear
+  transport: http
+tools:
+- name: create_verification_session
+  description: Create a new identity verification session
+  source_operation: openapi/clear-verification-openapi.json#create_verification_session
+- name: list_verifications
+  description: List verification sessions (deprecated; prefer search)
+  source_operation: openapi/clear-verification-openapi.json#list_verifications
+- name: get_verification
+  description: Retrieve a verification session and its verified traits/checks
+  source_operation: openapi/clear-verification-openapi.json#get_verification
+- name: add_custom_fields_verification_vendor_backend
+  description: Add custom fields to a verification session
+  source_operation: openapi/clear-verification-openapi.json#add_custom_fields_verification_vendor_backend
+- name: update_verification_session
+  description: Submit user profile information for a verification session
+  source_operation: openapi/clear-verification-openapi.json#update_verification_session
+- name: search_verification_sessions
+  description: Search verification sessions with advanced filters
+  source_operation: openapi/clear-verification-openapi.json#search_verification_sessions

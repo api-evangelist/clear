@@ -1,0 +1,14 @@
+{
+  "provider": "clear",
+  "sources": [
+    "clear-verification-sessions-api-openapi.yml"
+  ],
+  "outputs": [
+    "clear-verification-sessions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

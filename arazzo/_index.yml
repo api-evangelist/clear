@@ -1,0 +1,7 @@
+generated: '2026-07-18'
+method: derived
+workflows:
+- file: clear-verify-identity.yml
+  workflowId: verifyIdentity
+  title: CLEAR verify an identity
+  summary: Create a verification session and retrieve the verified result

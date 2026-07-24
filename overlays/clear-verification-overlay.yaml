@@ -1,0 +1,30 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for CLEAR1 Verification Sessions API
+  version: 1.0.0
+extends: openapi/clear-verification-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-18'
+    x-provider: CLEAR
+    x-industry: identity
+    x-artifacts:
+    - authentication
+    - scopes
+    - conventions
+    - errors
+    - lifecycle
+    - sandbox
+    - data-model
+    - asyncapi
+    - skills
+    - mcp
+- target: $.servers
+  update:
+  - url: https://verified.clearme.com/v1
+    description: Production
+- target: $.paths['/verification_sessions']['get']
+  update:
+    deprecated: true
+    x-deprecation-note: Prefer GET /verification_sessions/search

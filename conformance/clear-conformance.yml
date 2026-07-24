@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.clearme.com/docs/oidc-identity-token + well-known/clear-openid-configuration.json + openapi/clear-verification-openapi.json
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OAuth 2.0 authorization_code flow documented; token/authorization endpoints published in OIDC discovery
+- id: oidc
+  conforms: true
+  evidence: OpenID Connect discovery document served at /integrations/.well-known/openid-configuration with id_token issuance
+- id: pkce-rfc7636
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256 (OIDC discovery); PKCE documented
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: /.well-known/security.txt published
+- id: nist-800-63-ial2
+  conforms: true
+  evidence: Docs describe IAL2 identity proofing use cases
+- id: tefca-carequality
+  conforms: true
+  evidence: Individual Access Services (IAS) integration documented for Carequality/TEFCA compliance
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {error_type,message,fields} envelope, not application/problem+json
+- id: bearer-http-auth
+  conforms: true
+  evidence: HTTP Bearer auth on all API operations (openapi securitySchemes)

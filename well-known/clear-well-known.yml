@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+host: https://verified.clearme.com
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  file: clear-security.txt
+- path: /integrations/.well-known/openid-configuration
+  status: 200
+  file: clear-openid-configuration.json
+- path: /integrations/.well-known/jwks.json
+  status: 200
+  file: clear-jwks.json
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404

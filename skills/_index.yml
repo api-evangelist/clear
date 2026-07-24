@@ -1,0 +1,10 @@
+generated: '2026-07-18'
+method: generated
+skills:
+- file: clear-verify-identity.md
+  name: Verify a user's identity with CLEAR
+  api: openapi/clear-verification-openapi.json
+  operations:
+  - create_verification_session
+  - get_verification
+  - search_verification_sessions

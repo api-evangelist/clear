@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/clear-verification-openapi.json
+format: custom
+envelope:
+  fields:
+  - error_type
+  - message
+  - fields
+  content_type: application/json
+note: 'CLEAR1 returns a custom error envelope: {error_type, message, fields[]}. fields[] is populated when error_type is invalid_input.'
+problems:
+- status: 400
+  title: Bad Request
+  error_types:
+  - invalid_argument
+  - invalid_input
+  - invalid_content_type
+  - json_decode_error
+  - invalid_cookie
+  - error_sending_handoff_with_sms
+  applies_to: all operations
+- status: 401
+  title: Unauthorized
+  error_types:
+  - unauthenticated
+  - session_already_exists
+  - handoff_unsuccessful
+  applies_to: all operations
+- status: 412
+  title: Precondition Failed
+  error_types:
+  - precondition_failed
+  applies_to: all operations
+- status: 429
+  title: Too Many Requests
+  error_types:
+  - rate_limit_exceeded
+  applies_to: all operations
+- status: 500
+  title: Internal Server Error
+  error_types:
+  - unexpected_error
+  applies_to: all operations

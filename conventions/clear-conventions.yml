@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.clearme.com/docs + openapi/clear-verification-openapi.json
+authentication:
+  style: HTTP Bearer
+  header: 'Authorization: Bearer <API_KEY>'
+  https_only: true
+  oauth2: OAuth 2.0 / OIDC authorization_code + PKCE for end-user identity tokens (see authentication/ and scopes/)
+idempotency:
+  supported: false
+  note: No idempotency-key header is documented in the CLEAR1 API.
+pagination:
+  style: filter-based search
+  endpoint: GET /verification_sessions/search
+  note: search supports AND across filter types, OR within a filter; custom fields via custom_<name> query params
+sensitive_data:
+  default: SPII (SSN, gov ID images) redacted by default
+  reveal: reveal_sensitive_data=true query param on Get Verification Session
+webhooks:
+  catalog: asyncapi/clear-events-asyncapi.yml
+  auth: Bearer token + optional HMAC-SHA256 (X-CLEAR-HMAC-SHA256)
+  ack: return HTTP 200 within 5s; retries with backoff up to ~30h
+error_envelope:
+  shape: '{error_type, message, fields[]}'
+  catalog: errors/clear-problem-types.yml
+rate_limits:
+  signal: HTTP 429 with error_type rate_limit_exceeded
+versioning: URI path (/v1); see lifecycle/clear-lifecycle.yml
+cross_links:
+- errors/clear-problem-types.yml
+- errors/clear-reason-codes.yml
+- lifecycle/clear-lifecycle.yml
+- authentication/clear-authentication.yml
+- scopes/clear-scopes.yml

@@ -1,8 +1,16 @@
 aid: clear
 name: CLEAR
-description: 'CLEAR is a company surfaced as a portfolio company of bond-capital and added to the API
-  Evangelist network as a stub for enrichment. Sector: identity. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  CLEAR (clearme.com) is a secure identity company best known for its biometric
+  identity network. For developers, CLEAR1 exposes an identity verification API:
+  you create a verification session, hand the user off to CLEAR's hosted UI to
+  capture a government ID and a selfie/liveness check, then retrieve the verified
+  result and traits. The platform supports OAuth 2.0 / OpenID Connect (with PKCE)
+  for end-user identity tokens, bearer-key auth for the REST API, webhooks for
+  session lifecycle events, a sandbox with synthetic test identities, and
+  native integrations (Okta, Microsoft Entra, Ping, Amazon Connect, DocuSign,
+  Greenhouse) across workforce, healthcare, financial services, and consumer use
+  cases, including IAL2 identity proofing and TEFCA/Carequality access.
 url: https://raw.githubusercontent.com/api-evangelist/clear/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,18 +18,124 @@ x-backed-by:
 - bond-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://static-verified.clearme.com/CLEAR1_Logo_Horizontal_2Color_RGB.png
 tags:
 - Company
 - Identity
-apis: []
+- Identity Verification
+- Authentication
+- KYC
+- Biometrics
+- OAuth
+- OpenID Connect
+- Healthcare
+- Financial Services
+apis:
+- aid: clear:clear-verification-sessions-api
+  name: CLEAR Verification Sessions API
+  description: The Verification Sessions API from CLEAR — 4 operation(s) for verification sessions.
+  humanURL: https://docs.clearme.com/reference/the-verification-sessions-api
+  baseURL: https://verified.clearme.com/v1
+  tags:
+  - Verification Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/clear-verification-sessions-api-openapi.yml
+  - type: Authentication
+    url: authentication/clear-authentication.yml
+  - type: OAuthScopes
+    url: scopes/clear-scopes.yml
+  - type: ErrorCatalog
+    url: errors/clear-problem-types.yml
+  - type: Conventions
+    url: conventions/clear-conventions.yml
+  - type: DataModel
+    url: data-model/clear-data-model.yml
+  - type: Arazzo
+    url: arazzo/clear-verify-identity.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DeveloperPortal
+  url: https://docs.clearme.com
+- type: Documentation
+  url: https://docs.clearme.com/docs/getting-started
+- type: APIReference
+  url: https://docs.clearme.com/reference/the-verification-sessions-api
+- type: GettingStarted
+  url: https://docs.clearme.com/docs/standard-integration
+- type: Support
+  url: https://www.clearme.com/support
+- type: Blog
+  url: https://www.clearme.com/blog
+- type: Login
+  url: https://verified.clearme.com/dashboard
+- type: TermsOfService
+  url: https://www.clearme.com/terms
+- type: PrivacyPolicy
+  url: https://www.clearme.com/privacy-policy
+- type: StatusPage
+  url: https://status.clearme.com
+- type: Deprecation
+  url: lifecycle/clear-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/clear-lifecycle.yml
+- type: Authentication
+  url: authentication/clear-authentication.yml
+- type: OAuthScopes
+  url: scopes/clear-scopes.yml
+- type: Security
+  url: https://hackerone.com/clear
+- type: VulnerabilityDisclosure
+  url: security/clear-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/clear-domain-security.yml
+- type: SecurityTxt
+  url: well-known/clear-security.txt
+- type: WellKnown
+  url: well-known/clear-well-known.yml
+- type: Webhooks
+  url: asyncapi/clear-events-asyncapi.yml
+- type: AsyncAPI
+  url: asyncapi/clear-events-asyncapi.yml
+- type: Sandbox
+  url: sandbox/clear-sandbox.yml
+- type: Conformance
+  url: conformance/clear-conformance.yml
+- type: ErrorCatalog
+  url: errors/clear-reason-codes.yml
+- type: Components
+  url: components/clear-components.yml
+- type: MCPServer
+  url: mcp/clear-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/clear-agentic-access.yml
+- type: LLMsTxt
+  url: llms/clear-llms.txt
 - type: Website
   url: https://clearme.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
