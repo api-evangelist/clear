@@ -1,0 +1,250 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CLEAR1 Verification Sessions API",
+    "version": "1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Verification Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Verification Sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://verified.clearme.com/v1/verification_sessions",
+            "params": [
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the current page."
+              },
+              {
+                "name": "sort_descending",
+                "value": "",
+                "type": "query",
+                "description": "Whether to sort in descending (True) or ascending (False) order. By default, sorts descending."
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query",
+                "description": "Property to sort by. \"created_at\" by default."
+              },
+              {
+                "name": "search_term",
+                "value": "",
+                "type": "query",
+                "description": "Search term for filtering results. Supports searching by a trait the user has consented to share (email, phone, name, etc.). Examples: 'my.email@example.com', '+15551234567', 'Alex Taylor'."
+              }
+            ]
+          },
+          "docs": "**⚠️ Deprecation Notice:**\n>\n> This endpoint is deprecated and will be removed in the future. For new integrations we recommend\n> using the [Search Verification Sessions](https://docs.clearme.com/reference/search_verification_sessions)\n> endpoint instead."
+        },
+        {
+          "info": {
+            "name": "Create Verification Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://verified.clearme.com/v1/verification_sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Verification Session"
+        },
+        {
+          "info": {
+            "name": "Add Custom Fields to Verification Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://verified.clearme.com/v1/verification_sessions/:id/custom_fields",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Verification Session ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Custom Fields to Verification Session"
+        },
+        {
+          "info": {
+            "name": "Get Verification Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://verified.clearme.com/v1/verification_sessions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Verification Session ID"
+              },
+              {
+                "name": "reveal_sensitive_data",
+                "value": "",
+                "type": "query",
+                "description": "Set to true to reveal sensitive data such as SSNs and government ID images."
+              }
+            ]
+          },
+          "docs": "Retrieve verification session details.\n\n**Sensitive Data Handling:**\n- By default, SPII such as SSNs and government ID images are not revealed in the response\n- To reveal this data, set the `reveal_sensitive_data` query parameter to `true`\n\n**⚠️ Deprecation Notice:**\nThe previous approach of using `https://secure.verified.clearme.com`\nto reveal sensitive PII is being deprecated. Please migrate to using the `reveal_sensitive_data`\nquery parameter instead."
+        },
+        {
+          "info": {
+            "name": "Submit User Profile Information for Verification Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://verified.clearme.com/v1/verification_sessions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Verification Session ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit User Profile Information for Verification Session"
+        },
+        {
+          "info": {
+            "name": "Search Verification Sessions with Advanced Filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://verified.clearme.com/v1/verification_sessions/search",
+            "params": [
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page"
+              },
+              {
+                "name": "searchAfter",
+                "value": "",
+                "type": "query",
+                "description": "Pagination cursor (encodes sort value and record ID)"
+              },
+              {
+                "name": "sortField",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort results by"
+              },
+              {
+                "name": "sortDirection",
+                "value": "",
+                "type": "query",
+                "description": "Direction to sort results"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter by verification session status"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by project IDs"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "Filter by email addresses"
+              },
+              {
+                "name": "phone",
+                "value": "",
+                "type": "query",
+                "description": "Filter by phone numbers (partial match)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by names (partial match)"
+              },
+              {
+                "name": "flowId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by verification session IDs"
+              },
+              {
+                "name": "flowToken",
+                "value": "",
+                "type": "query",
+                "description": "Filter by flow tokens"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by user IDs"
+              },
+              {
+                "name": "startTime",
+                "value": "",
+                "type": "query",
+                "description": "Filter by verifcations updated after this timestamp, measured in seconds since the Unix epoch"
+              },
+              {
+                "name": "endTime",
+                "value": "",
+                "type": "query",
+                "description": "Filter by verifcations updated before this timestamp, measured in seconds since the Unix epoch"
+              }
+            ]
+          },
+          "docs": "Search verification sessions with flexible filtering.\n\nFilters combine using AND logic between different filter types, and OR logic\nwithin each filter's values. For example, filtering by status=[success, fail]\nand email=[user1@example.com, user2@example.com] returns sessions that match\n(success OR fail) AND (either email).\n\nIn addition to the parameters listed below, this endpoint also supports searching\nby your custom fields. To filter by a custom field value, specify the field name\nas a query "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

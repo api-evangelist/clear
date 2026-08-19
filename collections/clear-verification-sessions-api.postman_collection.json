@@ -1,0 +1,3037 @@
+{
+  "item": [
+    {
+      "id": "809b98b3-c8e0-4aed-bbc7-23444c7b6ebe",
+      "name": "Verification Sessions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d1fe25a4-4659-419c-9d69-33e0b3c88188",
+          "name": "Create Verification Session",
+          "request": {
+            "name": "Create Verification Session",
+            "description": {},
+            "url": {
+              "path": [
+                "verification_sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f760d7ba-4612-4b11-adb7-02739d77deac",
+              "name": "Returns a Verification Session object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object_name\": \"verification_session\",\n  \"authenticated\": false,\n  \"authentication_methods\": [\n    \"string\",\n    \"string\"\n  ],\n  \"checks\": [\n    {\n      \"value\": false,\n      \"name\": \"string\",\n      \"status\": \"completed\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"value\": true,\n      \"name\": \"string\",\n      \"status\": \"skipped\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"check_metadata\": [\n    \"string\",\n    \"string\"\n  ],\n  \"completed_at\": 7679,\n  \"created_at\": 5479,\n  \"email\": \"string\",\n  \"expires_at\": 2260,\n  \"phone\": \"string\",\n  \"redirect_url\": \"string\",\n  \"status\": \"deferred\",\n  \"token\": \"string\",\n  \"updated_at\": 8789,\n  \"user_created\": false,\n  \"user_id\": \"string\",\n  \"traits\": {\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"dob\": {\n      \"day\": 6807,\n      \"month\": 657,\n      \"year\": 3349\n    },\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"second_family_name\": \"string\",\n    \"full_last_name\": \"string\",\n    \"phone\": \"string\",\n    \"ssn4\": \"string\",\n    \"ssn9\": \"string\",\n    \"identification_number\": \"string\",\n    \"identification_type\": \"string\",\n    \"document\": {\n      \"nationality\": \"string\",\n      \"document_type\": \"paper_passport\",\n      \"document_subtypes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"issuing_country\": \"string\",\n      \"issuing_subdivision\": \"string\",\n      \"document_number\": \"string\",\n      \"date_of_expiry\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"gender\": \"string\",\n      \"address\": {\n        \"line1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"city\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"postal_code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"country\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"date_of_birth\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\",\n      \"full_name\": \"string\"\n    },\n    \"document_front\": \"string\",\n    \"document_back\": \"string\",\n    \"face_scan_preview\": \"string\",\n    \"health_insurance\": {\n      \"payer_id\": \"string\",\n      \"payer_name\": \"string\",\n      \"plan_status\": \"string\",\n      \"group_name\": \"string\",\n      \"group_id\": \"string\",\n      \"insurance_member_id\": \"string\",\n      \"policy_holder_first_name\": \"string\",\n      \"policy_holder_last_name\": \"string\"\n    },\n    \"verified_email\": [\n      {\n        \"email\": \"string\",\n        \"verified_at\": 7533.064818186993,\n        \"verification_method\": \"string\"\n      },\n      {\n        \"email\": \"string\",\n        \"verified_at\": 5176.073852489272,\n        \"verification_method\": \"string\"\n      }\n    ],\n    \"historical_data\": {\n      \"names\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"addresses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    }\n  },\n  \"project_id\": \"string\",\n  \"user_profile_information\": {\n    \"name\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\"\n    },\n    \"dob\": \"string\",\n    \"phone\": \"string\",\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"email\": \"string\"\n  },\n  \"custom_fields\": {},\n  \"user_profile_match_status\": \"string\",\n  \"idv_status\": \"string\",\n  \"sessions\": [\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 7207,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    },\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 5270,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "648562c7-862d-44a7-b065-1988755f0653",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"invalid_argument\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ff5c5c0-5c9d-4a80-b58e-74d29d6019c6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"session_already_exists\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a1eb6af-8d3c-4256-b6a5-83a4d1f6437c",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"precondition_failed\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a367af78-4d66-4cba-9ffd-4fd32f5fe1e5",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"rate_limit_exceeded\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72205264-d816-4126-aaa6-aaba4dec4b2c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auth_type\": \"sms\",\n  \"send_creator_email\": true,\n  \"sandbox\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"unexpected_error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14f0d6bb-527b-4ee5-b909-30482f5d9797",
+          "name": "List Verification Sessions",
+          "request": {
+            "name": "List Verification Sessions",
+            "description": {
+              "content": "**⚠️ Deprecation Notice:**\n>\n> This endpoint is deprecated and will be removed in the future. For new integrations we recommend\n> using the [Search Verification Sessions](https://docs.clearme.com/reference/search_verification_sessions)\n> endpoint instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "verification_sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "Number of records per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number of the current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_descending",
+                  "value": "true",
+                  "description": "Whether to sort in descending (True) or ascending (False) order. By default, sorts descending."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "created_at",
+                  "description": "Property to sort by. \"created_at\" by default."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_term",
+                  "value": "",
+                  "description": "Search term for filtering results. Supports searching by a trait the user has consented to share (email, phone, name, etc.). Examples: 'my.email@example.com', '+15551234567', 'Alex Taylor'."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "922a2057-4269-4581-9081-ac135949a915",
+              "name": "Returns a list of Verification Session objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sort_descending",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "created_at"
+                    },
+                    {
+                      "key": "search_term",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"verifications\": [\n    {\n      \"id\": \"string\",\n      \"object_name\": \"verification_session\",\n      \"authenticated\": true,\n      \"authentication_methods\": [\n        \"string\",\n        \"string\"\n      ],\n      \"checks\": [\n        {\n          \"value\": true,\n          \"name\": \"string\",\n          \"status\": \"skipped\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"value\": true,\n          \"name\": \"string\",\n          \"status\": \"error\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"check_metadata\": [\n        \"string\",\n        \"string\"\n      ],\n      \"completed_at\": 2368,\n      \"created_at\": 4920,\n      \"email\": \"string\",\n      \"expires_at\": 9428,\n      \"phone\": \"string\",\n      \"redirect_url\": \"string\",\n      \"status\": \"fail\",\n      \"token\": \"string\",\n      \"updated_at\": 4116,\n      \"user_created\": false,\n      \"user_id\": \"string\",\n      \"traits\": {\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": {\n          \"day\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"month\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"year\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"middle_name\": \"string\",\n        \"second_family_name\": \"string\",\n        \"full_last_name\": \"string\",\n        \"phone\": \"string\",\n        \"ssn4\": \"string\",\n        \"ssn9\": \"string\",\n        \"identification_number\": \"string\",\n        \"identification_type\": \"string\",\n        \"document\": {\n          \"nationality\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_subtypes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_subdivision\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_number\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_expiry\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"gender\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_birth\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"full_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"document_front\": \"string\",\n        \"document_back\": \"string\",\n        \"face_scan_preview\": \"string\",\n        \"health_insurance\": {\n          \"payer_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"payer_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"plan_status\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"insurance_member_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"verified_email\": [\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"historical_data\": {\n          \"names\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addresses\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"project_id\": \"string\",\n      \"user_profile_information\": {\n        \"name\": {\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": \"string\",\n        \"phone\": \"string\",\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\"\n      },\n      \"custom_fields\": {},\n      \"user_profile_match_status\": \"string\",\n      \"idv_status\": \"string\",\n      \"sessions\": [\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 8606,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        },\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 6692,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"object_name\": \"verification_session\",\n      \"authenticated\": false,\n      \"authentication_methods\": [\n        \"string\",\n        \"string\"\n      ],\n      \"checks\": [\n        {\n          \"value\": false,\n          \"name\": \"string\",\n          \"status\": \"error\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"value\": true,\n          \"name\": \"string\",\n          \"status\": \"error\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"check_metadata\": [\n        \"string\",\n        \"string\"\n      ],\n      \"completed_at\": 3687,\n      \"created_at\": 8443,\n      \"email\": \"string\",\n      \"expires_at\": 9498,\n      \"phone\": \"string\",\n      \"redirect_url\": \"string\",\n      \"status\": \"awaiting_user_input\",\n      \"token\": \"string\",\n      \"updated_at\": 6810,\n      \"user_created\": false,\n      \"user_id\": \"string\",\n      \"traits\": {\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": {\n          \"day\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"month\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"year\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"middle_name\": \"string\",\n        \"second_family_name\": \"string\",\n        \"full_last_name\": \"string\",\n        \"phone\": \"string\",\n        \"ssn4\": \"string\",\n        \"ssn9\": \"string\",\n        \"identification_number\": \"string\",\n        \"identification_type\": \"string\",\n        \"document\": {\n          \"nationality\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_subtypes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_subdivision\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_number\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_expiry\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"gender\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_birth\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"full_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"document_front\": \"string\",\n        \"document_back\": \"string\",\n        \"face_scan_preview\": \"string\",\n        \"health_insurance\": {\n          \"payer_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"payer_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"plan_status\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"insurance_member_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"verified_email\": [\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"historical_data\": {\n          \"names\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addresses\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"project_id\": \"string\",\n      \"user_profile_information\": {\n        \"name\": {\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": \"string\",\n        \"phone\": \"string\",\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\"\n      },\n      \"custom_fields\": {},\n      \"user_profile_match_status\": \"string\",\n      \"idv_status\": \"string\",\n      \"sessions\": [\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 9368,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        },\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 9766,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"links\": {\n    \"current\": \"http://UQqxrAWemzgYLdW.gwgxTxT6.5PK1r7SfvLO0ULHzUADgZaLTxOKUtaodM\",\n    \"first\": \"https://ggdQgFExARRpftwyvtZXWol.rlewWdZnIbHPXegdRQKBKdbmk0Pp+KpOfnBdON3i8fM.yrz,Qan6VNW4FJiIx\",\n    \"next\": \"https://pvKeVebMvwQEmonhBUjpXJMWF.ctqdLbdDm7YK5VMOPLipCnRzYN.U.PS-C-UkUV+1jMu22D10S+TEHAQiyD9\",\n    \"prev\": \"https://dwyBkNclDVgC.lwX0ZActLPPqCnVfiMn0PJsVSri\",\n    \"last\": \"http://HySNDVTUYvPqUyPhMKiUrVkNmztv.sgPoBVTW\",\n    \"total_results\": 572\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1f7826e-e225-45d6-8fbc-898c5a2f962d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sort_descending",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "created_at"
+                    },
+                    {
+                      "key": "search_term",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"invalid_argument\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0db43c2d-530a-4b76-9cfe-78957df9d1c8",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sort_descending",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "created_at"
+                    },
+                    {
+                      "key": "search_term",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"session_already_exists\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce2ba871-370d-4552-9a36-6286d8c92b16",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sort_descending",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "created_at"
+                    },
+                    {
+                      "key": "search_term",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"precondition_failed\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a22263b2-39dc-4116-8b6e-f8a206dde46a",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sort_descending",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "created_at"
+                    },
+                    {
+                      "key": "search_term",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"rate_limit_exceeded\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f376d0a-ee05-4d4e-8f10-e32f715e2eee",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sort_descending",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "created_at"
+                    },
+                    {
+                      "key": "search_term",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"unexpected_error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "acfa7da4-64e8-42b5-b63f-29f5e24d2220",
+          "name": "Add Custom Fields to Verification Session",
+          "request": {
+            "name": "Add Custom Fields to Verification Session",
+            "description": {},
+            "url": {
+              "path": [
+                "verification_sessions",
+                ":id",
+                "custom_fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Verification Session ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f43ed0a1-bc1c-4427-b809-55c97cdb41d5",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object_name\": \"verification_session\",\n  \"authenticated\": false,\n  \"authentication_methods\": [\n    \"string\",\n    \"string\"\n  ],\n  \"checks\": [\n    {\n      \"value\": false,\n      \"name\": \"string\",\n      \"status\": \"completed\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"value\": true,\n      \"name\": \"string\",\n      \"status\": \"skipped\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"check_metadata\": [\n    \"string\",\n    \"string\"\n  ],\n  \"completed_at\": 7679,\n  \"created_at\": 5479,\n  \"email\": \"string\",\n  \"expires_at\": 2260,\n  \"phone\": \"string\",\n  \"redirect_url\": \"string\",\n  \"status\": \"deferred\",\n  \"token\": \"string\",\n  \"updated_at\": 8789,\n  \"user_created\": false,\n  \"user_id\": \"string\",\n  \"traits\": {\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"dob\": {\n      \"day\": 6807,\n      \"month\": 657,\n      \"year\": 3349\n    },\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"second_family_name\": \"string\",\n    \"full_last_name\": \"string\",\n    \"phone\": \"string\",\n    \"ssn4\": \"string\",\n    \"ssn9\": \"string\",\n    \"identification_number\": \"string\",\n    \"identification_type\": \"string\",\n    \"document\": {\n      \"nationality\": \"string\",\n      \"document_type\": \"paper_passport\",\n      \"document_subtypes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"issuing_country\": \"string\",\n      \"issuing_subdivision\": \"string\",\n      \"document_number\": \"string\",\n      \"date_of_expiry\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"gender\": \"string\",\n      \"address\": {\n        \"line1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"city\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"postal_code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"country\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"date_of_birth\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\",\n      \"full_name\": \"string\"\n    },\n    \"document_front\": \"string\",\n    \"document_back\": \"string\",\n    \"face_scan_preview\": \"string\",\n    \"health_insurance\": {\n      \"payer_id\": \"string\",\n      \"payer_name\": \"string\",\n      \"plan_status\": \"string\",\n      \"group_name\": \"string\",\n      \"group_id\": \"string\",\n      \"insurance_member_id\": \"string\",\n      \"policy_holder_first_name\": \"string\",\n      \"policy_holder_last_name\": \"string\"\n    },\n    \"verified_email\": [\n      {\n        \"email\": \"string\",\n        \"verified_at\": 7533.064818186993,\n        \"verification_method\": \"string\"\n      },\n      {\n        \"email\": \"string\",\n        \"verified_at\": 5176.073852489272,\n        \"verification_method\": \"string\"\n      }\n    ],\n    \"historical_data\": {\n      \"names\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"addresses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    }\n  },\n  \"project_id\": \"string\",\n  \"user_profile_information\": {\n    \"name\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\"\n    },\n    \"dob\": \"string\",\n    \"phone\": \"string\",\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"email\": \"string\"\n  },\n  \"custom_fields\": {},\n  \"user_profile_match_status\": \"string\",\n  \"idv_status\": \"string\",\n  \"sessions\": [\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 7207,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    },\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 5270,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2577ab06-0efe-4cc8-84f1-87f10676a3a2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"invalid_argument\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "700414cf-481e-4ea4-af0e-d32cbbdd1088",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"session_already_exists\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ddaddb0-2094-48fe-b359-ffb5216c252b",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"precondition_failed\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7eed971e-fbf5-4cf2-9d91-2b5b078f4053",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"rate_limit_exceeded\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ccf8912-8335-43f0-bc19-effc7ea125a9",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id",
+                    "custom_fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"custom_fields\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"unexpected_error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e7fff26-fe81-43a2-acc2-81482a2682a6",
+          "name": "Get Verification Session",
+          "request": {
+            "name": "Get Verification Session",
+            "description": {
+              "content": "Retrieve verification session details.\n\n**Sensitive Data Handling:**\n- By default, SPII such as SSNs and government ID images are not revealed in the response\n- To reveal this data, set the `reveal_sensitive_data` query parameter to `true`\n\n**⚠️ Deprecation Notice:**\nThe previous approach of using `https://secure.verified.clearme.com`\nto reveal sensitive PII is being deprecated. Please migrate to using the `reveal_sensitive_data`\nquery parameter instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "verification_sessions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reveal_sensitive_data",
+                  "value": "<boolean>",
+                  "description": "Set to true to reveal sensitive data such as SSNs and government ID images."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Verification Session ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9623af5f-c1e0-43c8-a5f5-ea2cfa29b66e",
+              "name": "Returns a Verification Session object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal_sensitive_data",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object_name\": \"verification_session\",\n  \"authenticated\": false,\n  \"authentication_methods\": [\n    \"string\",\n    \"string\"\n  ],\n  \"checks\": [\n    {\n      \"value\": false,\n      \"name\": \"string\",\n      \"status\": \"completed\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"value\": true,\n      \"name\": \"string\",\n      \"status\": \"skipped\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"check_metadata\": [\n    \"string\",\n    \"string\"\n  ],\n  \"completed_at\": 7679,\n  \"created_at\": 5479,\n  \"email\": \"string\",\n  \"expires_at\": 2260,\n  \"phone\": \"string\",\n  \"redirect_url\": \"string\",\n  \"status\": \"deferred\",\n  \"token\": \"string\",\n  \"updated_at\": 8789,\n  \"user_created\": false,\n  \"user_id\": \"string\",\n  \"traits\": {\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"dob\": {\n      \"day\": 6807,\n      \"month\": 657,\n      \"year\": 3349\n    },\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"second_family_name\": \"string\",\n    \"full_last_name\": \"string\",\n    \"phone\": \"string\",\n    \"ssn4\": \"string\",\n    \"ssn9\": \"string\",\n    \"identification_number\": \"string\",\n    \"identification_type\": \"string\",\n    \"document\": {\n      \"nationality\": \"string\",\n      \"document_type\": \"paper_passport\",\n      \"document_subtypes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"issuing_country\": \"string\",\n      \"issuing_subdivision\": \"string\",\n      \"document_number\": \"string\",\n      \"date_of_expiry\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"gender\": \"string\",\n      \"address\": {\n        \"line1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"city\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"postal_code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"country\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"date_of_birth\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\",\n      \"full_name\": \"string\"\n    },\n    \"document_front\": \"string\",\n    \"document_back\": \"string\",\n    \"face_scan_preview\": \"string\",\n    \"health_insurance\": {\n      \"payer_id\": \"string\",\n      \"payer_name\": \"string\",\n      \"plan_status\": \"string\",\n      \"group_name\": \"string\",\n      \"group_id\": \"string\",\n      \"insurance_member_id\": \"string\",\n      \"policy_holder_first_name\": \"string\",\n      \"policy_holder_last_name\": \"string\"\n    },\n    \"verified_email\": [\n      {\n        \"email\": \"string\",\n        \"verified_at\": 7533.064818186993,\n        \"verification_method\": \"string\"\n      },\n      {\n        \"email\": \"string\",\n        \"verified_at\": 5176.073852489272,\n        \"verification_method\": \"string\"\n      }\n    ],\n    \"historical_data\": {\n      \"names\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"addresses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    }\n  },\n  \"project_id\": \"string\",\n  \"user_profile_information\": {\n    \"name\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\"\n    },\n    \"dob\": \"string\",\n    \"phone\": \"string\",\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"email\": \"string\"\n  },\n  \"custom_fields\": {},\n  \"user_profile_match_status\": \"string\",\n  \"idv_status\": \"string\",\n  \"sessions\": [\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 7207,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    },\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 5270,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f490fc29-aa44-4bf0-8586-9e581a357a31",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal_sensitive_data",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"invalid_argument\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9097df05-e3d3-4241-9a64-650fa3140c9f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal_sensitive_data",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"session_already_exists\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32ebc90f-33ce-4554-b700-8836352db60d",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal_sensitive_data",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"precondition_failed\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbdfbb23-3dda-4c11-870f-8e1263087706",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal_sensitive_data",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"rate_limit_exceeded\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cef70ea8-dcd6-437b-bca3-81a4f9251244",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal_sensitive_data",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"unexpected_error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75677660-48ad-4eef-9334-7294f6061454",
+          "name": "Submit User Profile Information for Verification Session",
+          "request": {
+            "name": "Submit User Profile Information for Verification Session",
+            "description": {},
+            "url": {
+              "path": [
+                "verification_sessions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Verification Session ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1398660-52cd-4e63-a004-69beb46f2f29",
+              "name": "Returns a Verification Session object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object_name\": \"verification_session\",\n  \"authenticated\": false,\n  \"authentication_methods\": [\n    \"string\",\n    \"string\"\n  ],\n  \"checks\": [\n    {\n      \"value\": false,\n      \"name\": \"string\",\n      \"status\": \"completed\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"value\": true,\n      \"name\": \"string\",\n      \"status\": \"skipped\",\n      \"check_result\": \"string\",\n      \"additional_details\": {\n        \"watchlist_hits\": {\n          \"hits\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"updated_at\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"params\": {},\n      \"reason_codes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"check_metadata\": [\n    \"string\",\n    \"string\"\n  ],\n  \"completed_at\": 7679,\n  \"created_at\": 5479,\n  \"email\": \"string\",\n  \"expires_at\": 2260,\n  \"phone\": \"string\",\n  \"redirect_url\": \"string\",\n  \"status\": \"deferred\",\n  \"token\": \"string\",\n  \"updated_at\": 8789,\n  \"user_created\": false,\n  \"user_id\": \"string\",\n  \"traits\": {\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"dob\": {\n      \"day\": 6807,\n      \"month\": 657,\n      \"year\": 3349\n    },\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"second_family_name\": \"string\",\n    \"full_last_name\": \"string\",\n    \"phone\": \"string\",\n    \"ssn4\": \"string\",\n    \"ssn9\": \"string\",\n    \"identification_number\": \"string\",\n    \"identification_type\": \"string\",\n    \"document\": {\n      \"nationality\": \"string\",\n      \"document_type\": \"paper_passport\",\n      \"document_subtypes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"issuing_country\": \"string\",\n      \"issuing_subdivision\": \"string\",\n      \"document_number\": \"string\",\n      \"date_of_expiry\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"gender\": \"string\",\n      \"address\": {\n        \"line1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"city\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"postal_code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"country\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"date_of_birth\": {\n        \"day\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"month\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"year\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\",\n      \"full_name\": \"string\"\n    },\n    \"document_front\": \"string\",\n    \"document_back\": \"string\",\n    \"face_scan_preview\": \"string\",\n    \"health_insurance\": {\n      \"payer_id\": \"string\",\n      \"payer_name\": \"string\",\n      \"plan_status\": \"string\",\n      \"group_name\": \"string\",\n      \"group_id\": \"string\",\n      \"insurance_member_id\": \"string\",\n      \"policy_holder_first_name\": \"string\",\n      \"policy_holder_last_name\": \"string\"\n    },\n    \"verified_email\": [\n      {\n        \"email\": \"string\",\n        \"verified_at\": 7533.064818186993,\n        \"verification_method\": \"string\"\n      },\n      {\n        \"email\": \"string\",\n        \"verified_at\": 5176.073852489272,\n        \"verification_method\": \"string\"\n      }\n    ],\n    \"historical_data\": {\n      \"names\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"addresses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    }\n  },\n  \"project_id\": \"string\",\n  \"user_profile_information\": {\n    \"name\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"middle_name\": \"string\"\n    },\n    \"dob\": \"string\",\n    \"phone\": \"string\",\n    \"address\": {\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\"\n    },\n    \"email\": \"string\"\n  },\n  \"custom_fields\": {},\n  \"user_profile_match_status\": \"string\",\n  \"idv_status\": \"string\",\n  \"sessions\": [\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 7207,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    },\n    {\n      \"location\": {\n        \"country\": \"string\",\n        \"country_iso\": \"string\",\n        \"subdivision\": \"string\",\n        \"subdivision_type\": \"string\",\n        \"city\": \"string\",\n        \"lat\": \"string\",\n        \"lon\": \"string\"\n      },\n      \"user_agent\": \"string\",\n      \"created_at\": 5270,\n      \"ip\": \"string\",\n      \"locale\": \"string\",\n      \"zoneinfo\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5393084c-f821-4de2-8384-a9cd39bd5025",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"invalid_argument\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "508512f2-61c5-4be5-995c-38cc770cf86a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"session_already_exists\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48bc9b4e-0a50-4c9a-9668-205b9a4e4b9c",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"precondition_failed\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4011746b-794e-4672-85b5-adc0fec9a04b",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"rate_limit_exceeded\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c6b9645-a6ac-4831-be40-226a81ca8dd7",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Verification Session ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"unexpected_error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ecf0b6c-ab91-4ff6-bd8c-dbb8d3caf945",
+          "name": "Search Verification Sessions with Advanced Filters",
+          "request": {
+            "name": "Search Verification Sessions with Advanced Filters",
+            "description": {
+              "content": "Search verification sessions with flexible filtering.\n\nFilters combine using AND logic between different filter types, and OR logic\nwithin each filter's values. For example, filtering by status=[success, fail]\nand email=[user1@example.com, user2@example.com] returns sessions that match\n(success OR fail) AND (either email).\n\nIn addition to the parameters listed below, this endpoint also supports searching\nby your custom fields. To filter by a custom field value, specify the field name\nas a query parameter prefixed with `custom_`. For example, to search for verifications\nwith a specific value for the custom field `store_id`, add `custom_store_id=xyz` as\na query parameter in your request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "verification_sessions",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "25",
+                  "description": "Number of results to return per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "searchAfter",
+                  "value": "<string>",
+                  "description": "Pagination cursor (encodes sort value and record ID)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortField",
+                  "value": "updated_at",
+                  "description": "Field to sort results by"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortDirection",
+                  "value": "desc",
+                  "description": "Direction to sort results"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by verification session status"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by verification session status"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectId",
+                  "value": "<string>",
+                  "description": "Filter by project IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectId",
+                  "value": "<string>",
+                  "description": "Filter by project IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "Filter by email addresses"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "Filter by email addresses"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Filter by phone numbers (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone",
+                  "value": "<string>",
+                  "description": "Filter by phone numbers (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by names (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by names (partial match)"
+                },
+                {
+                  "disabled": false,
+                  "key": "flowId",
+                  "value": "<string>",
+                  "description": "Filter by verification session IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "flowId",
+                  "value": "<string>",
+                  "description": "Filter by verification session IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "flowToken",
+                  "value": "<string>",
+                  "description": "Filter by flow tokens"
+                },
+                {
+                  "disabled": false,
+                  "key": "flowToken",
+                  "value": "<string>",
+                  "description": "Filter by flow tokens"
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>",
+                  "description": "Filter by user IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>",
+                  "description": "Filter by user IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "startTime",
+                  "value": "<integer>",
+                  "description": "Filter by verifcations updated after this timestamp, measured in seconds since the Unix epoch"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTime",
+                  "value": "<integer>",
+                  "description": "Filter by verifcations updated before this timestamp, measured in seconds since the Unix epoch"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c7ed6c3-1718-4c1e-83cb-d2744d4d316b",
+              "name": "Returns a list of Verification Session objects matching the search criteria.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "searchAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortField",
+                      "value": "updated_at"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "status",
+                      "value": "awaiting_user_profile_information"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fail"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"verifications\": [\n    {\n      \"id\": \"string\",\n      \"object_name\": \"verification_session\",\n      \"authenticated\": true,\n      \"authentication_methods\": [\n        \"string\",\n        \"string\"\n      ],\n      \"checks\": [\n        {\n          \"value\": true,\n          \"name\": \"string\",\n          \"status\": \"completed\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"value\": true,\n          \"name\": \"string\",\n          \"status\": \"skipped\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"check_metadata\": [\n        \"string\",\n        \"string\"\n      ],\n      \"completed_at\": 235,\n      \"created_at\": 1474,\n      \"email\": \"string\",\n      \"expires_at\": 8320,\n      \"phone\": \"string\",\n      \"redirect_url\": \"string\",\n      \"status\": \"manual_success\",\n      \"token\": \"string\",\n      \"updated_at\": 7974,\n      \"user_created\": false,\n      \"user_id\": \"string\",\n      \"traits\": {\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": {\n          \"day\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"month\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"year\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"middle_name\": \"string\",\n        \"second_family_name\": \"string\",\n        \"full_last_name\": \"string\",\n        \"phone\": \"string\",\n        \"ssn4\": \"string\",\n        \"ssn9\": \"string\",\n        \"identification_number\": \"string\",\n        \"identification_type\": \"string\",\n        \"document\": {\n          \"nationality\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_subtypes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_subdivision\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_number\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_expiry\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"gender\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_birth\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"full_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"document_front\": \"string\",\n        \"document_back\": \"string\",\n        \"face_scan_preview\": \"string\",\n        \"health_insurance\": {\n          \"payer_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"payer_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"plan_status\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"insurance_member_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"verified_email\": [\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"historical_data\": {\n          \"names\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addresses\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"project_id\": \"string\",\n      \"user_profile_information\": {\n        \"name\": {\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": \"string\",\n        \"phone\": \"string\",\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\"\n      },\n      \"custom_fields\": {},\n      \"user_profile_match_status\": \"string\",\n      \"idv_status\": \"string\",\n      \"sessions\": [\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 6557,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        },\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 671,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"object_name\": \"verification_session\",\n      \"authenticated\": false,\n      \"authentication_methods\": [\n        \"string\",\n        \"string\"\n      ],\n      \"checks\": [\n        {\n          \"value\": false,\n          \"name\": \"string\",\n          \"status\": \"completed\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"value\": true,\n          \"name\": \"string\",\n          \"status\": \"completed\",\n          \"check_result\": \"string\",\n          \"additional_details\": {\n            \"watchlist_hits\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"params\": {},\n          \"reason_codes\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"check_metadata\": [\n        \"string\",\n        \"string\"\n      ],\n      \"completed_at\": 8962,\n      \"created_at\": 1755,\n      \"email\": \"string\",\n      \"expires_at\": 6116,\n      \"phone\": \"string\",\n      \"redirect_url\": \"string\",\n      \"status\": \"awaiting_user_input\",\n      \"token\": \"string\",\n      \"updated_at\": 6330,\n      \"user_created\": false,\n      \"user_id\": \"string\",\n      \"traits\": {\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": {\n          \"day\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"month\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"year\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"middle_name\": \"string\",\n        \"second_family_name\": \"string\",\n        \"full_last_name\": \"string\",\n        \"phone\": \"string\",\n        \"ssn4\": \"string\",\n        \"ssn9\": \"string\",\n        \"identification_number\": \"string\",\n        \"identification_type\": \"string\",\n        \"document\": {\n          \"nationality\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_subtypes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"issuing_subdivision\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"document_number\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_expiry\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"gender\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"address\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"date_of_birth\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"full_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"document_front\": \"string\",\n        \"document_back\": \"string\",\n        \"face_scan_preview\": \"string\",\n        \"health_insurance\": {\n          \"payer_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"payer_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"plan_status\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"group_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"insurance_member_id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"policy_holder_last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"verified_email\": [\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verification_method\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"historical_data\": {\n          \"names\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addresses\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"project_id\": \"string\",\n      \"user_profile_information\": {\n        \"name\": {\n          \"first_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"last_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"middle_name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"dob\": \"string\",\n        \"phone\": \"string\",\n        \"address\": {\n          \"line1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"line2\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"city\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"postal_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"country\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"email\": \"string\"\n      },\n      \"custom_fields\": {},\n      \"user_profile_match_status\": \"string\",\n      \"idv_status\": \"string\",\n      \"sessions\": [\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 4428,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        },\n        {\n          \"location\": {\n            \"title\": \"Location\",\n            \"description\": \"Location information gathered from the user's frontend session.\",\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"user_agent\": \"string\",\n          \"created_at\": 2053,\n          \"ip\": \"string\",\n          \"locale\": \"string\",\n          \"zoneinfo\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"links\": {\n    \"current\": \"http://yixtgmlXKdTDeVCuTsvftG.vwzQ,suIZ8L5iD1jETkIy\",\n    \"first\": \"http://lubcsbagzAFzgYreXcaLBowANBN.kubrNUjQ5ehFuH3pV\",\n    \"next\": \"https://vgroUh.pfRI3KEVO+Bzkm\",\n    \"prev\": \"https://MjjZqKAZKCalZZOsIIVfFzbzCUBxxHCO.hziAet4aH\",\n    \"last\": \"http://zWEPyAzwPTkkCLDKfArGMNGZGQlsR.gmbWjAtRXMYB+w0tm1c9BazsCGwZuLUE-SfTkUb7bmUHVx6KbJsJkhAxQth\",\n    \"total_results\": 8856\n  },\n  \"searchAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e647a3dc-1043-43fc-b24e-331b388518eb",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "searchAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortField",
+                      "value": "updated_at"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "status",
+                      "value": "awaiting_user_profile_information"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fail"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"invalid_argument\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "292a80d2-3ab1-49e3-9519-fb148948e60d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "searchAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortField",
+                      "value": "updated_at"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "status",
+                      "value": "awaiting_user_profile_information"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fail"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"session_already_exists\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df81898b-f347-4e15-a8e4-eaf56f5e9965",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "searchAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortField",
+                      "value": "updated_at"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "status",
+                      "value": "awaiting_user_profile_information"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fail"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"precondition_failed\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e928298-4642-4911-b461-914b220bf69e",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "searchAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortField",
+                      "value": "updated_at"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "status",
+                      "value": "awaiting_user_profile_information"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fail"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"rate_limit_exceeded\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e460246-3c63-4c5e-8eb6-cab821802af5",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verification_sessions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    },
+                    {
+                      "key": "searchAfter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortField",
+                      "value": "updated_at"
+                    },
+                    {
+                      "key": "sortDirection",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "status",
+                      "value": "awaiting_user_profile_information"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fail"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "projectId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "flowToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_type\": \"unexpected_error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://verified.clearme.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "97fa90c9-860d-4115-916b-4c40260f4965",
+    "name": "CLEAR1 Verification Sessions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Everything you need to get started with CLEAR1.",
+      "type": "text/plain"
+    }
+  }
+}

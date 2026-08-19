@@ -2,7 +2,8 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: openapi/clear-verification-openapi.json
-note: Candidate tool list derived from CLEAR1 Verification Sessions API operations. No official hosted CLEAR MCP server was found as of this run.
+note: Candidate tool list derived from CLEAR1 Verification Sessions API operations. No official hosted
+  CLEAR MCP server was found as of this run.
 server:
   name: clear
   transport: http
@@ -25,3 +26,9 @@ tools:
 - name: search_verification_sessions
   description: Search verification sessions with advanced filters
   source_operation: openapi/clear-verification-openapi.json#search_verification_sessions
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
