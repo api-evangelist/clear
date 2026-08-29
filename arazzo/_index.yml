@@ -1,5 +1,5 @@
-generated: '2026-07-18'
-method: derived
+x-generated: '2026-07-18'
+x-method: derived
 workflows:
 - file: clear-verify-identity.yml
   workflowId: verifyIdentity

@@ -4,8 +4,8 @@ info:
   version: 1.0.0
   description: Create a CLEAR verification session, then retrieve its result and verified traits.
 sourceDescriptions:
-- name: clear
-  url: ../openapi/clear-verification-openapi.json
+- name: verificationSessionsApi
+  url: ../openapi/clear-verification-sessions-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: verifyIdentity
