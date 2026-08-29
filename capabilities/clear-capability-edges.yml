@@ -1,0 +1,27 @@
+slug: clear
+provider: CLEAR
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Verification Sessions
+  spec_file: clear-verification-sessions-api-openapi.yml
+  capability_id: BC-1300
+  capability_id_l1: BC-1300
+  capability_name: Banking Customer Management
+  confidence: 0.8
+  evidence: 'POST /verification_sessions Create Verification Session; vendor: ''capture a government ID
+    and a selfie/liveness check, then retrieve the verified result and traits''; schemas WatchlistHitDetails,
+    NameMatchingModel, AddressMatchingModel'
+  reason: Document plus biometric identity verification with name/address matching and watchlist hits
+    — the identity-proofing step of banking customer onboarding/KYC. Evidence spans both onboarding identity
+    verification and screening, so no L2 asserted.
