@@ -1,17 +1,24 @@
 generated: '2026-07-18'
 method: searched
 host: https://verified.clearme.com
-documents:
-- path: /.well-known/security.txt
-  status: 200
-  file: clear-security.txt
-- path: /integrations/.well-known/openid-configuration
-  status: 200
-  file: clear-openid-configuration.json
-- path: /integrations/.well-known/jwks.json
-  status: 200
-  file: clear-jwks.json
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
+hosts:
+- host: https://verified.clearme.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: clear-security.txt
+  - path: /integrations/.well-known/openid-configuration
+    status: 200
+    file: clear-openid-configuration.json
+  - path: /integrations/.well-known/jwks.json
+    status: 200
+    file: clear-jwks.json
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
