@@ -46,6 +46,9 @@ specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 image: https://static-verified.clearme.com/CLEAR1_Logo_Horizontal_2Color_RGB.png
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-09-24
 tags:
 - Company
 - Identity
@@ -55,7 +58,7 @@ tags:
 - Biometrics
 - OpenID Connect
 - Healthcare
-- Financial-Services
+- Financial Services
 tags_raw:
 - Company
 - Identity
@@ -67,6 +70,7 @@ tags_raw:
 - OpenID Connect
 - Healthcare
 - Financial Services
+- Financial-Services
 apis:
 - aid: clear:clear-verification-sessions-api
   name: CLEAR Verification Sessions API
