@@ -29,9 +29,89 @@ edges:
   seller_name: CLEAR1
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: CrowdStrike (own)
+  partner: crowdstrike
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.crowdstrike.com/listings/clear1-identity-verification-integration/
+  mirror_of: crowdstrike/integrations/crowdstrike-integration-edges.yml
+  apps:
+  - "CLEAR1 Identity Verification Integration</title>\n    \n    <meta name=\"description\" content=\"Enrich Falcon\
+    \ Next-Gen SIEM with CLEAR1 identity verification data for investigations\"/>\n    <meta name=\"template\" content=\"\
+    crowdstrike-marketplace-partner-details-page\"/>\n    <meta name=\"MobileOptimized\" content=\"width\"/>\n \
+    \   <meta name=\"HandheldFriendly\" content=\"true\"/>\n    <meta name=\"viewport\" content=\"width=device-width,\
+    \ initial-scale=1.0\"/>\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\"/>\n    \n    <meta property=\"\
+    twitter:card\" content=\"summary\"/>\n    <meta name=\"robots\" content=\"index, follow\"/>\n    \n    <meta\
+    \ name=\"content-page-ref\" content=\"bAV1NaGYBbsXe2-ZwxFTQYqiKsyA0ZafMyEAD4X8eg_Pw-QxChJfO8fhs3D9a0mTCwLLfLysKJt5ytnbNgpjLf8tDNJ4uOHhb_geQcJ7VFQlvIAKvb241M4ZJMhd5MYkmc_VOABRQq5qHDrBBJJBohdxFuq10mXbIaqte4zgUn0\"\
+    />\n<script defer=\"defer\" type=\"text/javascript\" src=\"/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js\"></script>\n\
+    <link rel=\"canonical\" href=\"https://marketplace.crowdstrike.com/listings/clear1-identity-verification-integration/\"\
+    />\n    \n    \n\n    \n<meta name=\"og:type\" content=\"website\"/>\n<meta name=\"twitter:title\" content=\"\
+    CLEAR1 Identity Verification Integration\"/>\n<meta name=\"og:site_name\" content=\"CrowdStrike MarketPlace\"\
+    />\n<meta name=\"keywords\" content=\"crowdstrike store, crowdstrike marketplace, crowdstrike app store, security\
+    \ apps, cybersecurity apps, cybersecurity marketplace, threat intelligence apps, crowdstrike falcon app, buy\
+    \ crowdstrike\"/>\n<meta name=\"twitter:description\" content=\"Enrich Falcon Next-Gen SIEM with CLEAR1 identity\
+    \ verification data for investigations\"/>\n<meta name=\"og:title\" content=\"CLEAR1 Identity Verification Integration\"\
+    />\n<meta name=\"og:locale\" content=\"en-US\"/>\n<meta name=\"og:url\" content=\"https://marketplace.crowdstrike.com/listings/clear1-identity-verification-integration/\"\
+    />\n<meta name=\"og:updated_time\" content=\"2026-08-29T16:41:48\"/>\n<meta name=\"og:description\" content=\"\
+    Enrich Falcon Next-Gen SIEM with CLEAR1 identity verification data for investigations\"/>\n\n    \n\n\n\n<!--\
+    \ FPID Cookie setting from the FPID js SDK -->\n\n    <script type=\"text/javascript\" src=\"https://ms.crowdstrike.com/js/fpid.js\"\
+    \ async data-cfasync=\"false\"></script>\n\n\n\n<!-- OneTrust Cookies Consent Notice start for default -->\n\
+    \n    \n        \n            <script type=\"text/javascript\" src=\"https://cdn.cookielaw.org/consent/bee15b7c-b632-450e-9003-9c8b60b3b978/OtAutoBlock.js\"\
+    \ data-cfasync=\"false\"></script>\n        \n    \n    <script src=\"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js\"\
+    \ data-document-language=\"true\" type=\"text/javascript\" charset=\"UTF-8\" data-domain-script=\"bee15b7c-b632-450e-9003-9c8b60b3b978\"\
+    \ data-cfasync=\"false\">\n        </script>\n        <script type=\"text/javascript\" data-cfasync=\"false\"\
+    >\n            function OptanonWrapper() { }\n        </script>\n    \n\n<!-- OneTrust Cookies Consent Notice\
+    \ end for default -->\n\n\n\n\n    <script type=\"text/javascript\" data-cfasync=\"false\">\n    !function(e,a,n,t){var\
+    \ i=e.head;if(i){\n    if (a) return;\n    var o=e.createElement(\"style\");\n    o.id=\"alloy-prehiding\",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}\n\
+    \    (document, document.location.href.indexOf(\"adobe_authoring_enabled\") !== -1, \"[data-target-location='true']\
+    \ { opacity: 0 !important}\", 3000);\n</script>\n    <script type=\"text/javascript\" src=\"//assets.adobedtm.com/d72cd986aea0/6c9104833b6e/launch-bacc530d480b.min.js\"\
+    \ async></script>\n\n\n<!-- Initialize Analytics JS -->\n\n    \n    \n<script src=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-analytics.lc-3df1fb70f480ba5b88ae47192b16ecff-lc.min.js\"\
+    ></script>\n\n\n\n\n\n<!-- load base css -->\n\n    \n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-grid.lc-d75b4ada966a12a0acc4f4483174f716-lc.min.css\"\
+    \ type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-base.lc-d8e9a44764866640e709abbb8b7e48f7-lc.min.css\"\
+    \ type=\"text/css\">\n\n\n\n\n<!-- Initialize Language Direction -->\n\n    \n<script src=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-language.lc-7085071ea35e3fe3f74984b851ee0b98-lc.min.js\"\
+    ></script>\n\n\n\n\n<!-- TODO - Determine how we can preload this -->\n\n    \n<link rel=\"stylesheet\" href=\"\
+    /etc.clientlibs/crowdstrike/clientlibs/crowdstrike-fonts.lc-6948ecef49b977e56a92fb1f07f1dd27-lc.min.css\" type=\"\
+    text/css\">\n\n\n\n\n\n\n\n\n    \n    \n    \n\n    \n\n    \n    \n<script src=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-dependencies.lc-39968705ebaffa8af8c834134a4525b2-lc.min.js\"\
+    ></script>\n\n\n\n    \n    \n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-dependencies.lc-2929dd9d69a653da2cf8fe429017e6b6-lc.min.css\"\
+    \ type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-common.lc-22f682a39a55d93265e974d2f289ec2e-lc.min.css\"\
+    \ type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-header.lc-f918a7f1f53a3b70145333e063afdff9-lc.min.css\"\
+    \ type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-addsearch.lc-5bd1b6d5b026bc6b7b5cbf7559f4c0b1-lc.min.css\"\
+    \ type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-dotcom.lc-36c31b4c04f3f8ba9f17f5b7c61954c6-lc.min.css\"\
+    \ type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/etc.clientlibs/crowdstrike/clientlibs/crowdstrike-event.lc-b383a52a1a03473aa6f81df00cb25068-lc.min.css\"\
+    \ type=\"text/css\">\n\n\n\n    \n\n    \n    <link rel=\"icon\" href=\"/content/dam/crowdstrike/marketplace/en-us/images/favicon.png\"\
+    />\n    <!-- Custom SEO Scripts -->\n\n    \n        <script>\n    window.Userback = window.Userback"
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+- partner_name: Ping Identity (own)
+  partner: ping-identity
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.pingone.com/item/clear-integration
+  mirror_of: ping-identity/integrations/ping-identity-integration-edges.yml
+  apps:
+  - CLEAR DaVinci Connector
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
 generated: '2026-10-12'
 method: searched
 checked:
+- crowdstrike/integrations/crowdstrike-integration-edges.yml
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
+- ping-identity/integrations/ping-identity-integration-edges.yml
 marketplace_apps: []
+source:
+- crowdstrike/integrations/crowdstrike-integration-edges.yml
+- ping-identity/integrations/ping-identity-integration-edges.yml

@@ -27,3 +27,27 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: clear-crowdstrike-own
+  label: CrowdStrike (own)
+  partner: crowdstrike
+  partner_name: CrowdStrike (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.crowdstrike.com/listings/clear1-identity-verification-integration/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: clear-ping-identity-own
+  label: Ping Identity (own)
+  partner: ping-identity
+  partner_name: Ping Identity (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.pingone.com/item/clear-integration
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
