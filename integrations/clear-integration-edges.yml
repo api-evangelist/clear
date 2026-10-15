@@ -104,12 +104,61 @@ edges:
   listing_count: 1
   detected: '2026-10-14'
   detected_by: mirror-platform-listings.py
+- partner_name: Kantara Initiative (Trust Status List)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://kantarainitiative.org/trust-status-list/
+  category: Identity assurance certification
+  contract_reference:
+    register: Kantara Initiative Trust Status List (kantarainitiative.org/trust-status-list)
+    spec_file: null
+    standard: Kantara Identity Assurance (NIST SP 800-63)
+    role: kantara-approved-service
+    registered_name: CLEAR
+    register_id: CLEAR
+    website: https://www.clearme.com
+    matched_domain: clearme.com
+    matched_by: domain
+    kantara_services:
+    - service: High Assurance Mobile Verification & Authentication (CLEAR Verified)
+      scheme: NIST 800-63 rev.3
+      assurance_levels: IAL2; AAL2
+      status: Good Standing
+      approval: IAF-Approval-25.07-KI
+      expiry: '2028-08-31'
+      table: full_services
+    - service: NextGen Identity+
+      scheme: NIST 800-63 rev.3
+      assurance_levels: IAL2
+      status: Good Standing
+      approval: IAF-Approval-25.11-KI
+      expiry: '2028-12-31'
+      table: component_services
+    signal_note: certified_products = one entry per approved service TYPE (Full / Component / Classic), lapsed unless
+      Good Standing and inside the triennial approval; registered applicants are participation only; services and
+      assurance levels are context
+    detected_by: sweep-regtech-aml.py
+    detected: '2026-10-15'
+    certified_products:
+    - product: Component Service
+      lapsed: false
+    - product: Full Service
+      lapsed: false
+  detected_by: sweep-regtech-aml.py
+  first_seen: '2026-10-15'
 generated: '2026-10-12'
 method: searched
 checked:
 - crowdstrike/integrations/crowdstrike-integration-edges.yml
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
+- https://kantarainitiative.org/trust-status-list/
+- https://msb.fincen.gov/
+- https://www.access-dvs-register.service.gov.uk/register/download-register
 - ping-identity/integrations/ping-identity-integration-edges.yml
 marketplace_apps: []
 source:

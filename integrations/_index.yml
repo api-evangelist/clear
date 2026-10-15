@@ -51,3 +51,49 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: clear-kantara-initiative-trust-status-list
+  label: Kantara Initiative (Trust Status List)
+  partner_name: Kantara Initiative (Trust Status List)
+  category: Identity assurance certification
+  type: register
+  channel: standard-directory
+  evidence: https://kantarainitiative.org/trust-status-list/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Kantara Initiative Trust Status List (kantarainitiative.org/trust-status-list)
+    spec_file: null
+    standard: Kantara Identity Assurance (NIST SP 800-63)
+    role: kantara-approved-service
+    registered_name: CLEAR
+    register_id: CLEAR
+    website: https://www.clearme.com
+    matched_domain: clearme.com
+    matched_by: domain
+    kantara_services:
+    - service: High Assurance Mobile Verification & Authentication (CLEAR Verified)
+      scheme: NIST 800-63 rev.3
+      assurance_levels: IAL2; AAL2
+      status: Good Standing
+      approval: IAF-Approval-25.07-KI
+      expiry: '2028-08-31'
+      table: full_services
+    - service: NextGen Identity+
+      scheme: NIST 800-63 rev.3
+      assurance_levels: IAL2
+      status: Good Standing
+      approval: IAF-Approval-25.11-KI
+      expiry: '2028-12-31'
+      table: component_services
+    signal_note: certified_products = one entry per approved service TYPE (Full / Component / Classic), lapsed unless
+      Good Standing and inside the triennial approval; registered applicants are participation only; services and
+      assurance levels are context
+    detected_by: sweep-regtech-aml.py
+    detected: '2026-10-15'
+    certified_products:
+    - product: Component Service
+      lapsed: false
+    - product: Full Service
+      lapsed: false
+  status: not-a-workflow
+  arazzo: null
