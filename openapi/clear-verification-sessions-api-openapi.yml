@@ -578,55 +578,20 @@ paths:
           description: Internal Server Error
 components:
   schemas:
-    UserProfileMatchingRequestDetailsV2:
-      properties:
-        name:
-          anyOf:
-          - $ref: '#/components/schemas/NameMatchingModelV2'
-          - type: 'null'
-        dob:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Dob
-        phone:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Phone
-        address:
-          anyOf:
-          - $ref: '#/components/schemas/AddressMatchingModel'
-          - type: 'null'
-        email:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Email
-      additionalProperties: false
-      type: object
-      title: User Profile Matching Request Details V2
-      description: User profile matching details for verification session.
-    APIError400Out:
+    APIError401Out:
       properties:
         error_type:
-          $ref: '#/components/schemas/ErrorType400'
+          $ref: '#/components/schemas/ErrorType401'
           title: Error Type
           description: '| Error Type | Description |
 
             | --- | --- |
 
-            | invalid_argument | An argument was invalid for reasons other than formatting, for example passing two options that are incompatible. |
+            | unauthenticated | The request does not have sufficient authentication for this operation. |
 
-            | invalid_input | A parameter contains formatting errors. The `fields` attribute will be populated with the specific list of validation errors. |
+            | session_already_exists | An end user session already exists for this verification. The verification needs to be completed on the same device/browser session it was started on. |
 
-            | invalid_content_type | The request has a body but does not have the `Content-Type: application/json` header. |
-
-            | json_decode_error | The body of the request is not valid JSON. The `message` attribute will have details on the parsing error. |
-
-            | invalid_cookie | The request has an invalid cookie. |
-
-            | error_sending_handoff_with_sms | There was an issue sending an SMS message, please use the QR code |'
+            | handoff_unsuccessful | Handoff unsuccessful.  |'
         message:
           type: string
           title: Message
@@ -639,253 +604,7 @@ components:
           default: []
       additionalProperties: false
       type: object
-      title: APIError400Out
-    NameMatchingModel:
-      properties:
-        first_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: First Name
-        last_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Last Name
-        middle_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Middle Name
-      additionalProperties: false
-      type: object
-      title: Name Matching Model
-      description: Parameters for creating a name for matching
-    WatchlistHit:
-      properties:
-        entity_type:
-          allOf:
-          - $ref: '#/components/schemas/WatchlistHitEntityType'
-          description: Type of entity in the watchlist hit. Currently always `person`.
-          default: person
-        details:
-          allOf:
-          - $ref: '#/components/schemas/WatchlistHitDetails'
-          title: Details
-          description: More details about the watchlist hit entity.
-        source_lists:
-          items:
-            $ref: '#/components/schemas/WatchlistSource'
-          type: array
-          title: Source Lists
-        hit_types:
-          items:
-            $ref: '#/components/schemas/WatchlistHitTypes'
-          type: array
-          title: Hit Types
-          description: Possible types of watchlist hits, can be `sanction`, `pep`, `warning`, or `adverse_media`.
-      additionalProperties: false
-      type: object
-      required:
-      - details
-      - source_lists
-      - hit_types
-      title: WatchlistHit
-    APIError412Out:
-      properties:
-        error_type:
-          $ref: '#/components/schemas/ErrorType412'
-          title: Error Type
-          description: '| Error Type | Description |
-
-            | --- | --- |
-
-            | precondition_failed | A precondition for this endpoint failed. This error usually occurs when steps of the authentication or verification process are called out of order. |'
-        message:
-          type: string
-          title: Message
-        fields:
-          items:
-            $ref: '#/components/schemas/FieldErrors'
-          type: array
-          title: Input Error
-          description: This is populated when `error_type` is of `invalid_input`.
-          default: []
-      additionalProperties: false
-      type: object
-      title: APIError412Out
-    UserProfileMatchingResponseDetailsV2:
-      properties:
-        name:
-          anyOf:
-          - $ref: '#/components/schemas/NameMatchingModel'
-          - type: 'null'
-        dob:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Dob
-        phone:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Phone
-        address:
-          anyOf:
-          - $ref: '#/components/schemas/AddressMatchingModel'
-          - type: 'null'
-        email:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Email
-      additionalProperties: false
-      type: object
-      title: User Profile Matching Response Details V2
-      description: Response object for user profile matching in verification sessions.
-    WatchlistHits:
-      properties:
-        hits:
-          items:
-            $ref: '#/components/schemas/WatchlistHit'
-          type: array
-          title: Hits
-          description: ''
-        updated_at:
-          type: integer
-          title: Updated At
-          description: A unix timestamp representing the time watchlist hit data was last fetched from data sources
-      additionalProperties: false
-      type: object
-      required:
-      - hits
-      title: WatchlistHits
-    HealthInsuranceOut:
-      properties:
-        payer_id:
-          type: string
-          title: Payer Id
-          description: The id of the health insurance payer.
-        payer_name:
-          type: string
-          title: Payer Name
-          description: The name health insurance payer.
-        plan_status:
-          type: string
-          title: Plan Status
-          description: The status of the health insurance plan.
-        group_name:
-          type: string
-          title: Group Name
-          description: The name of the group associated with the health insurance plan.
-        group_id:
-          type: string
-          title: Group Id
-          description: The number of the group associated with the health insurance plan.
-        insurance_member_id:
-          type: string
-          title: Insurance Member Id
-          description: The member id of the health insurance.
-        policy_holder_first_name:
-          type: string
-          title: Policy Holder First Name
-          description: The first name of the policy holder.
-        policy_holder_last_name:
-          type: string
-          title: Policy Holder Last Name
-          description: The last name of the policy holder.
-      additionalProperties: false
-      type: object
-      title: Verified Health Insurance
-      description: Verified health insurance object returned to the vendor.
-    VerificationOptions:
-      properties:
-        redirect_url:
-          type: string
-          title: Redirect URL
-          description: If present, users will be redirected to this url upon successful verification.
-        phone:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Phone
-          description: User phone number to be prefilled on phone entry screen. User may edit.
-        email:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Email
-          description: User email to be prefilled on email entry screen. User may edit.
-        locale:
-          anyOf:
-          - type: 'null'
-          - type: string
-            enum:
-            - en-US
-            - en-MX
-            - en-CA
-            - es-MX
-            - es-US
-            - fr-CA
-            - en
-            - es
-            - fr
-            - de
-            - it
-          title: Locale
-          description: Locale to use for the user interface and any communication with the end-user. This will override any locale supplied by the user.
-          example: en-US
-        project_id:
-          type: string
-          title: Project Id
-          description: '[Required] The project ID to use for this session.'
-        custom_fields:
-          type: object
-          title: Custom Fields
-          description: Custom fields specified by you as key-value pairs.
-        user_profile_information:
-          anyOf:
-          - $ref: '#/components/schemas/UserProfileMatchingRequestDetailsV2'
-          - type: 'null'
-          description: Information for user profile matching
-        user_id:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: User ID
-          description: The partner-scoped user identifier for an existing CLEAR user. When provided, phone and email inputs are ignored.
-      additionalProperties: false
-      type: object
-      title: Verification Session Options
-      description: Options for verification session creation.
-    ErrorType400:
-      type: string
-      enum:
-      - invalid_argument
-      - invalid_input
-      - invalid_content_type
-      - json_decode_error
-      - json_decode_error
-      - invalid_cookie
-      - error_sending_handoff_with_sms
-      title: ErrorType400
-    VerificationSearchSortField:
-      type: string
-      enum:
-      - created_at
-      - updated_at
-      title: VerificationSearchSortField
-    SoraDocumentTypeEnum:
-      type: string
-      enum:
-      - drivers_license
-      - paper_passport
-      - passport_card
-      - id_card
-      - visa
-      - health_care_card
-      - other
-      title: SoraDocumentTypeEnum
+      title: APIError401Out
     SessionInfoOut:
       properties:
         location:
@@ -917,263 +636,35 @@ components:
       type: object
       title: SessionInfoOut
       description: Information gathered from the user's frontend session.
-    APIError429Out:
-      properties:
-        error_type:
-          $ref: '#/components/schemas/ErrorType429'
-          title: Error Type
-          description: '| Error Type | Description |
-
-            | --- | --- |
-
-            | rate_limit_exceeded | Comes with an HTTP 429 response; too many requests have recently occurred from your system. Rate limits are set very high so that exceeding them should indicate unauthorized access or some other problem. |'
-        message:
-          type: string
-          title: Message
-        fields:
-          items:
-            $ref: '#/components/schemas/FieldErrors'
-          type: array
-          title: Input Error
-          description: This is populated when `error_type` is of `invalid_input`.
-          default: []
-      additionalProperties: false
-      type: object
-      title: APIError429Out
-    CustomFieldsIn:
-      properties:
-        custom_fields:
-          additionalProperties:
-            type: string
-          type: object
-          title: Custom Fields
-          description: Custom fields specified by you as key-value pairs.
-      additionalProperties: false
-      type: object
-      required:
-      - custom_fields
-      title: CustomFieldsIn
-    ErrorType500:
-      type: string
-      enum:
-      - unexpected_error
-      const: unexpected_error
-      title: ErrorType500
-    SoraExternalCheckExport:
+    UserProfileMatchingRequestDetailsV2:
       properties:
         name:
-          type: string
-          title: Name
-          description: The name of the check as specified in the verification configuration.
-        value:
-          type: boolean
-          title: Value
-          description: The corresponding value of the check. The value may be `null` when the check is skipped or unable to evaluate to a deterministic result.
-        status:
-          type: string
-          enum:
-          - completed
-          - skipped
-          - error
-          title: Status
-          description: Whether this check has been performed or not. completed here means that we were able to perform the check. To see if the check passed or failed, see the `value` field.
-        check_result:
+          anyOf:
+          - $ref: '#/components/schemas/NameMatchingModelV2'
+          - type: 'null'
+        dob:
           anyOf:
           - type: string
           - type: 'null'
-          title: Check Result
-          description: 'The granular result of the check that identifies a specific outcome. Possible values: success, failure, indeterminate, not_applicable, awaiting_async_response.'
-        additional_details:
-          allOf:
-          - $ref: '#/components/schemas/SoraExternalCheckAdditionalDetails'
-          title: Additional Details
-          description: The additional details for this check when available.
-        params:
-          type: object
-          title: Params
-          description: Any custom parameters that were configured for the check
-        reason_codes:
-          items:
-            type: string
-          type: array
-          title: Reason Codes
-          description: A list of alphanumerical codes that correspond to various pass or failure reasons.
-      additionalProperties: false
-      type: object
-      required:
-      - value
-      title: Check
-    VerificationStatus:
-      type: string
-      enum:
-      - success
-      - fail
-      - awaiting_user_input
-      - deferred
-      - processing_data
-      - expired
-      - awaiting_manual_review
-      - manual_success
-      - manual_fail
-      - canceled
-      title: VerificationStatus
-      description: The statuses that a verification can be in.
-    AddressMatchingModel:
-      properties:
-        line1:
+          title: Dob
+        phone:
           anyOf:
           - type: string
           - type: 'null'
-          title: Line1
-        line2:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Line2
-        city:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: City
-        state:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: State
-        postal_code:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Postal Code
-        country:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Country
-      additionalProperties: false
-      type: object
-      title: Address Matching Model
-      description: Parameters for creating an address for matching
-    AddressOut:
-      properties:
-        line1:
-          type: string
-          title: Line1
-          description: Street address (e.g. "123 Main St")
-        line2:
-          type: string
-          title: Line2
-          description: Second line of the address, such as the suite, building, or apartment number
-        city:
-          type: string
-          title: City
-          description: City
-        state:
-          type: string
-          title: State
-          description: Full name of the state, province, or region
-        postal_code:
-          type: string
-          title: Postal Code
-          description: Postal code as a string
-        country:
-          type: string
-          title: Country
-          description: Country name as a string
-      additionalProperties: false
-      type: object
-      title: Verified Address
-      description: Verified address object returned to the vendor.
-    WatchlistHitTypes:
-      type: string
-      enum:
-      - sanction
-      - pep
-      - warning
-      - adverse_media
-      title: WatchlistHitTypes
-      description: Types of watchlist hits.
-    NameMatchingModelV2:
-      properties:
-        first_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: First Name
-        last_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Last Name
-      additionalProperties: false
-      type: object
-      title: Name Matching Model V2
-      description: Parameters for creating a name for matching, excluding middle name.
-    DocumentOut:
-      properties:
-        nationality:
-          type: string
-          title: Nationality
-        document_type:
-          allOf:
-          - $ref: '#/components/schemas/SoraDocumentTypeEnum'
-          description: The type of the user's document.
-        document_subtypes:
-          items:
-            type: string
-          type: array
-          title: Document Subtypes
-          description: A list of subtypes from the document
-        issuing_country:
-          type: string
-          title: Issuing Country
-          description: The ISO 3166 alpha-3 country code of issue of the document
-        issuing_subdivision:
-          type: string
-          title: Issuing Subdivision
-          description: The ISO 3166 subdivision (state/provence/etc) issuer of the document
-        document_number:
-          type: string
-          title: Document Number
-          description: The document number scanned from the document
-        date_of_expiry:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          title: Date Of Expiry
-          description: The date of expiration of the document
-        gender:
-          type: string
-          title: Gender
-          description: The gender scanned from the document
+          title: Phone
         address:
-          allOf:
-          - $ref: '#/components/schemas/AddressOut'
-          description: The address scanned from the document
-        date_of_birth:
-          allOf:
-          - $ref: '#/components/schemas/Date'
-          title: Date Of Birth
-          description: The date of birth scanned from the document
-        first_name:
-          type: string
-          title: First Name
-          description: The first name scanned from the document
-        last_name:
-          type: string
-          title: Last Name
-          description: The last name scanned from the document
-        middle_name:
-          type: string
-          title: Middle Name
-          description: The middle name scanned from the document
-        full_name:
-          type: string
-          title: Full Name
-          description: The full name scanned from the document
+          anyOf:
+          - $ref: '#/components/schemas/AddressMatchingModel'
+          - type: 'null'
+        email:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Email
       additionalProperties: false
       type: object
-      title: Verified Document
-      description: Verified document object returned to the vendor.
+      title: User Profile Matching Request Details V2
+      description: User profile matching details for verification session.
     APIError500Out:
       properties:
         error_type:
@@ -1197,23 +688,66 @@ components:
       additionalProperties: false
       type: object
       title: APIError500Out
-    KeysetPaginatedVerificationSessionsOut:
+    SortByOptions:
+      type: string
+      enum:
+      - user_id
+      - status
+      - created_at
+      - updated_at
+      - completed_at
+      - expires_at
+      - creator_email
+      - first_name
+      - middle_name
+      - last_name
+      - second_family_name
+      - email
+      - phone
+      - user_created
+      title: SortByOptions
+    VerificationUpdateOptions:
       properties:
-        verifications:
-          items:
-            $ref: '#/components/schemas/VerificationSessionOut'
-          type: array
-          title: Verification Sessions
-        links:
-          $ref: '#/components/schemas/PaginationLinks'
-        searchAfter:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Searchafter
-          description: Cursor for retrieving the next page of results. Pass this value to the searchAfter query parameter in your next request to continue pagination. This cursor encodes the position in the result set based on the current sort order. If there are no results this field will contain the searchAfter param that was sent with the request.
+        user_profile_information:
+          $ref: '#/components/schemas/UserProfileMatchingRequestDetailsV2'
+          description: User Profile Information for client record matching
+      additionalProperties: false
       type: object
-      title: KeysetPaginatedVerificationSessionsOut
+      title: VerificationUpdateOptions
+    PaginationLinks:
+      properties:
+        current:
+          type: string
+          format: uri
+          title: Current
+          description: Link to the current page of results
+        first:
+          type: string
+          format: uri
+          title: First
+          description: Link to the first page of results
+        next:
+          type: string
+          format: uri
+          title: Next
+          description: Link to the page of results after this one
+        prev:
+          type: string
+          format: uri
+          title: Prev
+          description: Link to the page of results before this one
+        last:
+          type: string
+          format: uri
+          title: Last
+          description: Link to the final page of results
+        total_results:
+          type: integer
+          title: Total Results
+          description: The total number of results across all pages
+      type: object
+      title: Pagination Details
+      description: Links to other response pages for paginated responses
     VerificationSessionsOut:
       properties:
         verifications:
@@ -1225,181 +759,93 @@ components:
           $ref: '#/components/schemas/PaginationLinks'
       type: object
       title: VerificationSessionsOut
-    SoraExternalCheckAdditionalDetails:
+    APIError412Out:
       properties:
-        watchlist_hits:
-          allOf:
-          - $ref: '#/components/schemas/WatchlistHits'
-          title: Watchlist Hits
-          description: Watchlist hits
-      additionalProperties: false
-      type: object
-      title: SoraExternalCheckAdditionalDetails
-      description: Additional details returned for some checks.
-    HistoricalNameOut:
-      properties:
-        first_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: First Name
-        middle_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Middle Name
-        last_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Last Name
-        second_family_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Second Family Name
-        first_seen_year:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: First Seen Year
-        first_seen_month:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: First Seen Month
-        first_seen_day:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: First Seen Day
-        last_seen_year:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: Last Seen Year
-        last_seen_month:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: Last Seen Month
-        last_seen_day:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: Last Seen Day
-      additionalProperties: false
-      type: object
-      title: HistoricalNameOut
-    ErrorType412:
-      type: string
-      enum:
-      - precondition_failed
-      const: precondition_failed
-      title: ErrorType412
-    VerificationUpdateOptions:
-      properties:
-        user_profile_information:
-          $ref: '#/components/schemas/UserProfileMatchingRequestDetailsV2'
-          description: User Profile Information for client record matching
-      additionalProperties: false
-      type: object
-      title: VerificationUpdateOptions
-    FieldErrors:
-      properties:
-        location:
-          type: string
-          title: Location
-          description: The location of the error in the request. For example, `body.email` for an invalid email.
+        error_type:
+          $ref: '#/components/schemas/ErrorType412'
+          title: Error Type
+          description: '| Error Type | Description |
+
+            | --- | --- |
+
+            | precondition_failed | A precondition for this endpoint failed. This error usually occurs when steps of the authentication or verification process are called out of order. |'
         message:
           type: string
           title: Message
-          description: Human-readable string describing the error. These are suitable for displaying directly in user interface near the input field.
-        received_value:
-          title: Received Value
-          description: The value received for the field. This attribute is added on a best-effort basis, so for some validation errors it may be blank or non-existent.
+        fields:
+          items:
+            $ref: '#/components/schemas/FieldErrors'
+          type: array
+          title: Input Error
+          description: This is populated when `error_type` is of `invalid_input`.
+          default: []
+      additionalProperties: false
+      type: object
+      title: APIError412Out
+    APIError429Out:
+      properties:
+        error_type:
+          $ref: '#/components/schemas/ErrorType429'
+          title: Error Type
+          description: '| Error Type | Description |
+
+            | --- | --- |
+
+            | rate_limit_exceeded | Comes with an HTTP 429 response; too many requests have recently occurred from your system. Rate limits are set very high so that exceeding them should indicate unauthorized access or some other problem. |'
+        message:
+          type: string
+          title: Message
+        fields:
+          items:
+            $ref: '#/components/schemas/FieldErrors'
+          type: array
+          title: Input Error
+          description: This is populated when `error_type` is of `invalid_input`.
+          default: []
+      additionalProperties: false
+      type: object
+      title: APIError429Out
+    WatchlistHit:
+      properties:
+        entity_type:
+          allOf:
+          - $ref: '#/components/schemas/WatchlistHitEntityType'
+          description: Type of entity in the watchlist hit. Currently always `person`.
+          default: person
+        details:
+          allOf:
+          - $ref: '#/components/schemas/WatchlistHitDetails'
+          title: Details
+          description: More details about the watchlist hit entity.
+        source_lists:
+          items:
+            $ref: '#/components/schemas/WatchlistSource'
+          type: array
+          title: Source Lists
+        hit_types:
+          items:
+            $ref: '#/components/schemas/WatchlistHitTypes'
+          type: array
+          title: Hit Types
+          description: Possible types of watchlist hits, can be `sanction`, `pep`, `warning`, or `adverse_media`.
       additionalProperties: false
       type: object
       required:
-      - location
-      - message
-      - received_value
-      title: FieldErrors
-    HistoricalAddressOut:
-      properties:
-        address_line1:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Address Line1
-        address_line2:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Address Line2
-        city:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: City
-        state:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: State
-        postal_code:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Postal Code
-        country:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Country
-        street_number:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Street Number
-        street_name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Street Name
-        first_seen_year:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: First Seen Year
-        first_seen_month:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: First Seen Month
-        first_seen_day:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: First Seen Day
-        last_seen_year:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: Last Seen Year
-        last_seen_month:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: Last Seen Month
-        last_seen_day:
-          anyOf:
-          - type: integer
-          - type: 'null'
-          title: Last Seen Day
-      additionalProperties: false
-      type: object
-      title: HistoricalAddressOut
+      - details
+      - source_lists
+      - hit_types
+      title: WatchlistHit
+    ErrorType400:
+      type: string
+      enum:
+      - invalid_argument
+      - invalid_input
+      - invalid_content_type
+      - json_decode_error
+      - json_decode_error
+      - invalid_cookie
+      - error_sending_handoff_with_sms
+      title: ErrorType400
     WatchlistHitDetails:
       properties:
         name:
@@ -1503,6 +949,125 @@ components:
       type: object
       title: WatchlistHitDetails
       description: Details about the watchlist hit person
+    SoraDocumentTypeEnum:
+      type: string
+      enum:
+      - drivers_license
+      - paper_passport
+      - passport_card
+      - id_card
+      - visa
+      - health_care_card
+      - other
+      title: SoraDocumentTypeEnum
+    LocationInfo:
+      properties:
+        country:
+          type: string
+          title: Country
+          description: Country name as a string
+        country_iso:
+          type: string
+          title: Country ISO Code
+          description: Country ISO 3166 2-letter code as a string
+        subdivision:
+          type: string
+          title: Subdivision
+          description: Subdivision name as a string
+        subdivision_type:
+          type: string
+          title: Subdivision Type
+          description: The kind of subdivision, e.g. state, province, etc.
+        city:
+          type: string
+          title: City
+          description: City name as a string
+        lat:
+          type: string
+          title: Lat
+          description: Latitude parsed from the request
+        lon:
+          type: string
+          title: Lon
+          description: Longitude parsed from the request
+      additionalProperties: false
+      type: object
+      title: LocationInfo
+      description: 'Information about where a request came from parsed from its IP or other request-level
+
+        information.'
+    VerificationSessionStatus:
+      type: string
+      enum:
+      - success
+      - fail
+      - awaiting_user_profile_information
+      - awaiting_user_input
+      - processing_data
+      - expired
+      - awaiting_manual_review
+      - manual_success
+      - manual_fail
+      - deferred
+      - canceled
+      title: VerificationSessionStatus
+      description: The statuses that a a verification session can be in.
+    SoraExternalCheckAdditionalDetails:
+      properties:
+        watchlist_hits:
+          allOf:
+          - $ref: '#/components/schemas/WatchlistHits'
+          title: Watchlist Hits
+          description: Watchlist hits
+      additionalProperties: false
+      type: object
+      title: SoraExternalCheckAdditionalDetails
+      description: Additional details returned for some checks.
+    HealthInsuranceOut:
+      properties:
+        payer_id:
+          type: string
+          title: Payer Id
+          description: The id of the health insurance payer.
+        payer_name:
+          type: string
+          title: Payer Name
+          description: The name health insurance payer.
+        plan_status:
+          type: string
+          title: Plan Status
+          description: The status of the health insurance plan.
+        group_name:
+          type: string
+          title: Group Name
+          description: The name of the group associated with the health insurance plan.
+        group_id:
+          type: string
+          title: Group Id
+          description: The number of the group associated with the health insurance plan.
+        insurance_member_id:
+          type: string
+          title: Insurance Member Id
+          description: The member id of the health insurance.
+        policy_holder_first_name:
+          type: string
+          title: Policy Holder First Name
+          description: The first name of the policy holder.
+        policy_holder_last_name:
+          type: string
+          title: Policy Holder Last Name
+          description: The last name of the policy holder.
+      additionalProperties: false
+      type: object
+      title: Verified Health Insurance
+      description: Verified health insurance object returned to the vendor.
+    ErrorType401:
+      type: string
+      enum:
+      - unauthenticated
+      - session_already_exists
+      - handoff_unsuccessful
+      title: ErrorType401
     TraitsOut:
       properties:
         address:
@@ -1595,71 +1160,23 @@ components:
       type: object
       title: Collected Information
       description: Information collected from the user returned to the vendor.
-    SortByOptions:
-      type: string
-      enum:
-      - user_id
-      - status
-      - created_at
-      - updated_at
-      - completed_at
-      - expires_at
-      - creator_email
-      - first_name
-      - middle_name
-      - last_name
-      - second_family_name
-      - email
-      - phone
-      - user_created
-      title: SortByOptions
-    VerifiedEmailOut:
+    KeysetPaginatedVerificationSessionsOut:
       properties:
-        email:
-          type: string
-          title: Email
-          description: The verified email address.
-        verified_at:
-          type: number
-          title: Verified At
-          description: Timestamp when the email was verified.
-        verification_method:
-          type: string
-          title: Verification Method
-          description: Method used to verify the email (e.g., 'magic_link', 'otp').
-      additionalProperties: false
+        verifications:
+          items:
+            $ref: '#/components/schemas/VerificationSessionOut'
+          type: array
+          title: Verification Sessions
+        links:
+          $ref: '#/components/schemas/PaginationLinks'
+        searchAfter:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Searchafter
+          description: Cursor for retrieving the next page of results. Pass this value to the searchAfter query parameter in your next request to continue pagination. This cursor encodes the position in the result set based on the current sort order. If there are no results this field will contain the searchAfter param that was sent with the request.
       type: object
-      title: Verified Email
-      description: Verified email object returned to the vendor.
-    WatchlistSource:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the watchlist source
-        summary:
-          type: string
-          title: Summary
-          description: Description of the watchlist source
-        url:
-          type: string
-          format: uri
-          title: Url
-          description: Link to watchlist source
-      additionalProperties: false
-      type: object
-      required:
-      - name
-      - summary
-      - url
-      title: WatchlistSource
-      description: Information regarding the source of the watchlist hit
-    WatchlistHitEntityType:
-      type: string
-      enum:
-      - person
-      const: person
-      title: WatchlistHitEntityType
+      title: KeysetPaginatedVerificationSessionsOut
     HistoricalDataOut:
       properties:
         names:
@@ -1679,28 +1196,68 @@ components:
       additionalProperties: false
       type: object
       title: HistoricalDataOut
-    VerificationSessionStatus:
+    WatchlistHits:
+      properties:
+        hits:
+          items:
+            $ref: '#/components/schemas/WatchlistHit'
+          type: array
+          title: Hits
+          description: ''
+        updated_at:
+          type: integer
+          title: Updated At
+          description: A unix timestamp representing the time watchlist hit data was last fetched from data sources
+      additionalProperties: false
+      type: object
+      required:
+      - hits
+      title: WatchlistHits
+    APIError400Out:
+      properties:
+        error_type:
+          $ref: '#/components/schemas/ErrorType400'
+          title: Error Type
+          description: '| Error Type | Description |
+
+            | --- | --- |
+
+            | invalid_argument | An argument was invalid for reasons other than formatting, for example passing two options that are incompatible. |
+
+            | invalid_input | A parameter contains formatting errors. The `fields` attribute will be populated with the specific list of validation errors. |
+
+            | invalid_content_type | The request has a body but does not have the `Content-Type: application/json` header. |
+
+            | json_decode_error | The body of the request is not valid JSON. The `message` attribute will have details on the parsing error. |
+
+            | invalid_cookie | The request has an invalid cookie. |
+
+            | error_sending_handoff_with_sms | There was an issue sending an SMS message, please use the QR code |'
+        message:
+          type: string
+          title: Message
+        fields:
+          items:
+            $ref: '#/components/schemas/FieldErrors'
+          type: array
+          title: Input Error
+          description: This is populated when `error_type` is of `invalid_input`.
+          default: []
+      additionalProperties: false
+      type: object
+      title: APIError400Out
+    ErrorType500:
       type: string
       enum:
-      - success
-      - fail
-      - awaiting_user_profile_information
-      - awaiting_user_input
-      - processing_data
-      - expired
-      - awaiting_manual_review
-      - manual_success
-      - manual_fail
-      - deferred
-      - canceled
-      title: VerificationSessionStatus
-      description: The statuses that a a verification session can be in.
-    ErrorType429:
+      - unexpected_error
+      const: unexpected_error
+      title: ErrorType500
+    WatchlistHitEntityType:
       type: string
       enum:
-      - rate_limit_exceeded
-      const: rate_limit_exceeded
-      title: ErrorType429
+      - person
+      const: person
+      title: WatchlistHitEntityType
     VerificationSessionOut:
       properties:
         id:
@@ -1843,40 +1400,6 @@ components:
       type: object
       title: Verification Session
       description: We return data in the following schema for our Verification Session routes.
-    PaginationLinks:
-      properties:
-        current:
-          type: string
-          format: uri
-          title: Current
-          description: Link to the current page of results
-        first:
-          type: string
-          format: uri
-          title: First
-          description: Link to the first page of results
-        next:
-          type: string
-          format: uri
-          title: Next
-          description: Link to the page of results after this one
-        prev:
-          type: string
-          format: uri
-          title: Prev
-          description: Link to the page of results before this one
-        last:
-          type: string
-          format: uri
-          title: Last
-          description: Link to the final page of results
-        total_results:
-          type: integer
-          title: Total Results
-          description: The total number of results across all pages
-      type: object
-      title: Pagination Details
-      description: Links to other response pages for paginated responses
     Date:
       properties:
         day:
@@ -1895,39 +1418,236 @@ components:
       type: object
       title: Verified Date
       description: A date object.
-    APIError401Out:
+    AddressMatchingModel:
       properties:
-        error_type:
-          $ref: '#/components/schemas/ErrorType401'
-          title: Error Type
-          description: '| Error Type | Description |
-
-            | --- | --- |
-
-            | unauthenticated | The request does not have sufficient authentication for this operation. |
-
-            | session_already_exists | An end user session already exists for this verification. The verification needs to be completed on the same device/browser session it was started on. |
-
-            | handoff_unsuccessful | Handoff unsuccessful.  |'
-        message:
-          type: string
-          title: Message
-        fields:
-          items:
-            $ref: '#/components/schemas/FieldErrors'
-          type: array
-          title: Input Error
-          description: This is populated when `error_type` is of `invalid_input`.
-          default: []
+        line1:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Line1
+        line2:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Line2
+        city:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: City
+        state:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+        postal_code:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Postal Code
+        country:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Country
       additionalProperties: false
       type: object
-      title: APIError401Out
-    VerificationSearchSortDirection:
+      title: Address Matching Model
+      description: Parameters for creating an address for matching
+    ErrorType412:
       type: string
       enum:
-      - asc
-      - desc
-      title: VerificationSearchSortDirection
+      - precondition_failed
+      const: precondition_failed
+      title: ErrorType412
+    CustomFieldsIn:
+      properties:
+        custom_fields:
+          additionalProperties:
+            type: string
+          type: object
+          title: Custom Fields
+          description: Custom fields specified by you as key-value pairs.
+      additionalProperties: false
+      type: object
+      required:
+      - custom_fields
+      title: CustomFieldsIn
+    VerifiedEmailOut:
+      properties:
+        email:
+          type: string
+          title: Email
+          description: The verified email address.
+        verified_at:
+          type: number
+          title: Verified At
+          description: Timestamp when the email was verified.
+        verification_method:
+          type: string
+          title: Verification Method
+          description: Method used to verify the email (e.g., 'magic_link', 'otp').
+      additionalProperties: false
+      type: object
+      title: Verified Email
+      description: Verified email object returned to the vendor.
+    UserProfileMatchingResponseDetailsV2:
+      properties:
+        name:
+          anyOf:
+          - $ref: '#/components/schemas/NameMatchingModel'
+          - type: 'null'
+        dob:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Dob
+        phone:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Phone
+        address:
+          anyOf:
+          - $ref: '#/components/schemas/AddressMatchingModel'
+          - type: 'null'
+        email:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Email
+      additionalProperties: false
+      type: object
+      title: User Profile Matching Response Details V2
+      description: Response object for user profile matching in verification sessions.
+    HistoricalAddressOut:
+      properties:
+        address_line1:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Address Line1
+        address_line2:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Address Line2
+        city:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: City
+        state:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+        postal_code:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Postal Code
+        country:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Country
+        street_number:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Street Number
+        street_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Street Name
+        first_seen_year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: First Seen Year
+        first_seen_month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: First Seen Month
+        first_seen_day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: First Seen Day
+        last_seen_year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Last Seen Year
+        last_seen_month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Last Seen Month
+        last_seen_day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Last Seen Day
+      additionalProperties: false
+      type: object
+      title: HistoricalAddressOut
+    AddressOut:
+      properties:
+        line1:
+          type: string
+          title: Line1
+          description: Street address (e.g. "123 Main St")
+        line2:
+          type: string
+          title: Line2
+          description: Second line of the address, such as the suite, building, or apartment number
+        city:
+          type: string
+          title: City
+          description: City
+        state:
+          type: string
+          title: State
+          description: Full name of the state, province, or region
+        postal_code:
+          type: string
+          title: Postal Code
+          description: Postal code as a string
+        country:
+          type: string
+          title: Country
+          description: Country name as a string
+      additionalProperties: false
+      type: object
+      title: Verified Address
+      description: Verified address object returned to the vendor.
+    WatchlistSource:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of the watchlist source
+        summary:
+          type: string
+          title: Summary
+          description: Description of the watchlist source
+        url:
+          type: string
+          format: uri
+          title: Url
+          description: Link to watchlist source
+      additionalProperties: false
+      type: object
+      required:
+      - name
+      - summary
+      - url
+      title: WatchlistSource
+      description: Information regarding the source of the watchlist hit
     WatchlistDate:
       properties:
         day:
@@ -1948,49 +1668,329 @@ components:
       required:
       - year
       title: WatchlistDate
-    ErrorType401:
-      type: string
-      enum:
-      - unauthenticated
-      - session_already_exists
-      - handoff_unsuccessful
-      title: ErrorType401
-    LocationInfo:
+    NameMatchingModel:
       properties:
-        country:
-          type: string
-          title: Country
-          description: Country name as a string
-        country_iso:
-          type: string
-          title: Country ISO Code
-          description: Country ISO 3166 2-letter code as a string
-        subdivision:
-          type: string
-          title: Subdivision
-          description: Subdivision name as a string
-        subdivision_type:
-          type: string
-          title: Subdivision Type
-          description: The kind of subdivision, e.g. state, province, etc.
-        city:
-          type: string
-          title: City
-          description: City name as a string
-        lat:
-          type: string
-          title: Lat
-          description: Latitude parsed from the request
-        lon:
-          type: string
-          title: Lon
-          description: Longitude parsed from the request
+        first_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: First Name
+        last_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Last Name
+        middle_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Middle Name
       additionalProperties: false
       type: object
-      title: LocationInfo
-      description: 'Information about where a request came from parsed from its IP or other request-level
-
-        information.'
+      title: Name Matching Model
+      description: Parameters for creating a name for matching
+    VerificationStatus:
+      type: string
+      enum:
+      - success
+      - fail
+      - awaiting_user_input
+      - deferred
+      - processing_data
+      - expired
+      - awaiting_manual_review
+      - manual_success
+      - manual_fail
+      - canceled
+      title: VerificationStatus
+      description: The statuses that a verification can be in.
+    FieldErrors:
+      properties:
+        location:
+          type: string
+          title: Location
+          description: The location of the error in the request. For example, `body.email` for an invalid email.
+        message:
+          type: string
+          title: Message
+          description: Human-readable string describing the error. These are suitable for displaying directly in user interface near the input field.
+        received_value:
+          title: Received Value
+          description: The value received for the field. This attribute is added on a best-effort basis, so for some validation errors it may be blank or non-existent.
+      additionalProperties: false
+      type: object
+      required:
+      - location
+      - message
+      - received_value
+      title: FieldErrors
+    HistoricalNameOut:
+      properties:
+        first_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: First Name
+        middle_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Middle Name
+        last_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Last Name
+        second_family_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Second Family Name
+        first_seen_year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: First Seen Year
+        first_seen_month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: First Seen Month
+        first_seen_day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: First Seen Day
+        last_seen_year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Last Seen Year
+        last_seen_month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Last Seen Month
+        last_seen_day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Last Seen Day
+      additionalProperties: false
+      type: object
+      title: HistoricalNameOut
+    NameMatchingModelV2:
+      properties:
+        first_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: First Name
+        last_name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Last Name
+      additionalProperties: false
+      type: object
+      title: Name Matching Model V2
+      description: Parameters for creating a name for matching, excluding middle name.
+    ErrorType429:
+      type: string
+      enum:
+      - rate_limit_exceeded
+      const: rate_limit_exceeded
+      title: ErrorType429
+    DocumentOut:
+      properties:
+        nationality:
+          type: string
+          title: Nationality
+        document_type:
+          allOf:
+          - $ref: '#/components/schemas/SoraDocumentTypeEnum'
+          description: The type of the user's document.
+        document_subtypes:
+          items:
+            type: string
+          type: array
+          title: Document Subtypes
+          description: A list of subtypes from the document
+        issuing_country:
+          type: string
+          title: Issuing Country
+          description: The ISO 3166 alpha-3 country code of issue of the document
+        issuing_subdivision:
+          type: string
+          title: Issuing Subdivision
+          description: The ISO 3166 subdivision (state/provence/etc) issuer of the document
+        document_number:
+          type: string
+          title: Document Number
+          description: The document number scanned from the document
+        date_of_expiry:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          title: Date Of Expiry
+          description: The date of expiration of the document
+        gender:
+          type: string
+          title: Gender
+          description: The gender scanned from the document
+        address:
+          allOf:
+          - $ref: '#/components/schemas/AddressOut'
+          description: The address scanned from the document
+        date_of_birth:
+          allOf:
+          - $ref: '#/components/schemas/Date'
+          title: Date Of Birth
+          description: The date of birth scanned from the document
+        first_name:
+          type: string
+          title: First Name
+          description: The first name scanned from the document
+        last_name:
+          type: string
+          title: Last Name
+          description: The last name scanned from the document
+        middle_name:
+          type: string
+          title: Middle Name
+          description: The middle name scanned from the document
+        full_name:
+          type: string
+          title: Full Name
+          description: The full name scanned from the document
+      additionalProperties: false
+      type: object
+      title: Verified Document
+      description: Verified document object returned to the vendor.
+    WatchlistHitTypes:
+      type: string
+      enum:
+      - sanction
+      - pep
+      - warning
+      - adverse_media
+      title: WatchlistHitTypes
+      description: Types of watchlist hits.
+    SoraExternalCheckExport:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: The name of the check as specified in the verification configuration.
+        value:
+          type: boolean
+          title: Value
+          description: The corresponding value of the check. The value may be `null` when the check is skipped or unable to evaluate to a deterministic result.
+        status:
+          type: string
+          enum:
+          - completed
+          - skipped
+          - error
+          title: Status
+          description: Whether this check has been performed or not. completed here means that we were able to perform the check. To see if the check passed or failed, see the `value` field.
+        check_result:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Check Result
+          description: 'The granular result of the check that identifies a specific outcome. Possible values: success, failure, indeterminate, not_applicable, awaiting_async_response.'
+        additional_details:
+          allOf:
+          - $ref: '#/components/schemas/SoraExternalCheckAdditionalDetails'
+          title: Additional Details
+          description: The additional details for this check when available.
+        params:
+          type: object
+          title: Params
+          description: Any custom parameters that were configured for the check
+        reason_codes:
+          items:
+            type: string
+          type: array
+          title: Reason Codes
+          description: A list of alphanumerical codes that correspond to various pass or failure reasons.
+      additionalProperties: false
+      type: object
+      required:
+      - value
+      title: Check
+    VerificationSearchSortField:
+      type: string
+      enum:
+      - created_at
+      - updated_at
+      title: VerificationSearchSortField
+    VerificationSearchSortDirection:
+      type: string
+      enum:
+      - asc
+      - desc
+      title: VerificationSearchSortDirection
+    VerificationOptions:
+      properties:
+        redirect_url:
+          type: string
+          title: Redirect URL
+          description: If present, users will be redirected to this url upon successful verification.
+        phone:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Phone
+          description: User phone number to be prefilled on phone entry screen. User may edit.
+        email:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Email
+          description: User email to be prefilled on email entry screen. User may edit.
+        locale:
+          anyOf:
+          - type: 'null'
+          - type: string
+            enum:
+            - en-US
+            - en-MX
+            - en-CA
+            - es-MX
+            - es-US
+            - fr-CA
+            - en
+            - es
+            - fr
+            - de
+            - it
+          title: Locale
+          description: Locale to use for the user interface and any communication with the end-user. This will override any locale supplied by the user.
+          example: en-US
+        project_id:
+          type: string
+          title: Project Id
+          description: '[Required] The project ID to use for this session.'
+        custom_fields:
+          type: object
+          title: Custom Fields
+          description: Custom fields specified by you as key-value pairs.
+        user_profile_information:
+          anyOf:
+          - $ref: '#/components/schemas/UserProfileMatchingRequestDetailsV2'
+          - type: 'null'
+          description: Information for user profile matching
+        user_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: User ID
+          description: The partner-scoped user identifier for an existing CLEAR user. When provided, phone and email inputs are ignored.
+      additionalProperties: false
+      type: object
+      title: Verification Session Options
+      description: Options for verification session creation.
   securitySchemes:
     Authorization_Bearer:
       type: http
