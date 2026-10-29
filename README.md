@@ -64,6 +64,144 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-CLEAR is a company surfaced as a portfolio company of bond-capital and added to the API Evangelist network as a stub for enrichment. Sector: identity. This profile is a lead awaiting the enrichment pipeline.
+CLEAR (clearme.com) is a secure identity company best known for its biometric identity network. For developers, CLEAR1 exposes an identity verification API: you create a verification session, hand the user off to CLEAR's hosted UI to capture a government ID and a selfie/liveness check, then retrieve the verified result and traits. The platform supports OAuth 2.0 / OpenID Connect (with PKCE) for end-user identity tokens, bearer-key auth for the REST API, webhooks for session lifecycle events, a sandbox with synthetic test identities, and native integrations (Okta, Microsoft Entra, Ping, Amazon Connect, DocuSign, Greenhouse) across workforce, healthcare, financial services, and consumer use cases, including IAL2 identity proofing and TEFCA/Carequality access.
 
-Backed by: bond-capital — https://clearme.com
+**Areas:** Company · Identity · Identity Verification · Authentication · KYC · Biometrics · OpenID Connect · Healthcare · Financial Services
+
+## CLEAR on APIs.io
+
+Everything profiled for CLEAR is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/clear/](https://apis.io/providers/clear/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [CLEAR Verification Sessions API](https://apis.io/apis/clear/clear-verification-sessions-api/) — The Verification Sessions API from CLEAR — 4 operation(s) for verification sessions.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Arazzo workflows (1)
+
+Multi-step workflows that chain operations into a business task.
+
+- [CLEAR verify an identity](https://apis.io/arazzos/clear/clear-verify-identity/)
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [CLEAR1 Webhooks](https://apis.io/asyncapis/clear/clear-events-asyncapi/)
+
+#### Event channels (1)
+
+Individual events and webhooks the provider emits.
+
+- [/](https://apis.io/channels/clear/clearwebhook/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [clear](https://apis.io/servers/clear/clear/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Clear Agentic Access](https://apis.io/agentic-access/clear/clear-agentic-access/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [CLEAR1 Verification Sessions API](https://apis.io/collections/clear/open-clear-verification-sessions-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Clear Verification Overlay](https://apis.io/overlays/clear/clear-verification-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Clear Authentication](https://apis.io/security/clear/clear-authentication/)
+- [Clear Domain Security](https://apis.io/security/clear/clear-domain-security/)
+- [Clear Vulnerability Disclosure](https://apis.io/security/clear/clear-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Clear Scopes](https://apis.io/scopes/clear/clear-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://clearme.com)
+- [Documentation](https://docs.clearme.com/docs/getting-started)
+- [Getting started](https://docs.clearme.com/docs/standard-integration)
+- [API reference](https://docs.clearme.com/reference/the-verification-sessions-api)
+- [Support](https://www.clearme.com/support)
+- [Blog](https://ir.clearme.com/news-events/press-releases)
+- [Security](https://hackerone.com/clear)
+- [Terms of service](https://www.clearme.com/terms)
+- [Privacy policy](https://www.clearme.com/privacy-policy)
+- [Status](https://status.clearme.com)
+
+## API Evangelist rating
+
+**Kin Score 46.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 54.6 |
+| Contract governance | 18.2 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 47.0 |
+| Access clarity | 27.6 |
+
+**Agent readiness 34.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 36.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/clear/](https://apis.io/providers/clear/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CLEAR: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/clear/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
